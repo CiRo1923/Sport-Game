@@ -1,0 +1,37 @@
+:root {
+  --font-family: "微軟正黑體", "Microsoft JhengHei", "Heiti TC", "黑體", arial, sans-serif, serif;
+  --icon-family: sport;
+  --line-height: 1.45;
+  --anim-time: 0.3s;
+  --desktop-fontsize: (50, 48, 34, 30, 26, 24);
+  --tablet-fontsize: (38, 36, 25, 22, 20, 18);
+  --mobile-fontsize: (25, 24, 17, 15, 13, 12);
+  --color:
+    (
+      xf    : #fff,
+      x0    : #000,
+      x2342 : #2f3542,
+      x7799 : #737f99,
+      x9abf : #99a5bf,
+      xbbd1 : #b6bed1,
+      xeef2 : #e4e8f2,
+      xfffa : #f5f6fa,
+      xfff7 : #f0f2f7,
+      xfff0 : #fffcf0,
+      x26eb : #2f66eb,
+      xf457 : #ff4757,
+      xfc66 : #ffc766,
+      x0d9a : #04d19a,
+      x3bfc : #3fbdfc,
+      x26f7 : #2a67f7,
+      x7cff : #7fc0ff,
+      x19ff : #1e90ff
+    );
+  --icon:
+    (
+      bets     : "\e900",
+      home     : "\e901",
+      personal : "\e902",
+      ticket   : "\e903"
+    );
+}

@@ -1,0 +1,63 @@
+.tab {
+  box-shadow: 0 0 8px 0 rgba(#000, 0.1);
+}
+
+.tabCtrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+
+  &.act {
+    &::after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      position: absolute;
+    }
+  }
+
+  &::before {
+    content: attr(notice);
+    line-height: 1;
+    display: block;
+    border-radius: 20px;
+  }
+}
+
+@mixin T {
+  .tabCtrl {
+    &::before {
+      margin-left: vmt(8px);
+      padding: vmt(2px) vmt(6px);
+      font-size: vmt(18px);
+    }
+
+    &::after {
+      height: vmt(5px);
+    }
+  }
+
+  .tabCardCtrl {
+    width: vmt(60px);
+  }
+}
+
+@mixin M {
+  .tabCtrl {
+    &::before {
+      margin-left: vmm(5px);
+      padding: vmm(1px) vmm(4px);
+      font-size: vmm(12px);
+    }
+
+    &::after {
+      height: vmm(3px);
+    }
+  }
+
+  .tabCardCtrl {
+    width: vmm(40px);
+  }
+}

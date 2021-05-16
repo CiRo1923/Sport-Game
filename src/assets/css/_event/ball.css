@@ -1,0 +1,33 @@
+.ballChannel {
+  &[notice] {
+    &::before {
+      content: attr(notice);
+      left: 50%;
+      position: absolute;
+    }
+  }
+}
+
+@mixin T {
+  .ballChannel {
+    &[notice] {
+      &::before {
+        top: vmt(-6px);
+        margin-left: vmt(18px);
+        font-size: vmt(18px);
+      }
+    }
+  }
+}
+
+@mixin M {
+  .ballChannel {
+    &[notice] {
+      &::before {
+        top: vmm(-4px);
+        margin-left: vmm(12px);
+        font-size: vmm(12px);
+      }
+    }
+  }
+}

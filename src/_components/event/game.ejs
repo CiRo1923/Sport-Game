@@ -1,0 +1,135 @@
+<div class="game">
+  <% for(let i = 0; i < data.length; i += 1) { -%>
+    <% const { info, country, total } = data[i] -%>
+    <div class="gameGp Bdst(sol) Bdtw(2) Bdtc(xfffa) P(12,t) P(8,m)">
+      <div class="gameGpHd">
+        <ul class="gameGpTr">
+          <li class="gameGpTh Col(5/11) Pl(3,t) Pb(9,t) Pr(14,t) Pl(2,m) Pb(6,m) Pr(10,m)">
+            <p><%- info %></p>
+          </li>
+          <li class="gameGpTh Col(2/11) Px(3,t) Pb(9,t) Px(2,m) Pb(6,m) Ta(c)">
+            <em class="C(x9abf) Fz(24)">1X2</em>
+          </li>
+          <li class="gameGpTh Col(2/11) Px(3,t) Pb(9,t) Px(2,m) Pb(6,m) Ta(c)">
+            <em class="C(x9abf) Fz(24)">FT HDP</em>
+          </li>
+          <li class="gameGpTh Col(2/11) Px(3,t) Pb(9,t) Px(2,m) Pb(6,m) Ta(c)">
+            <em class="C(x9abf) Fz(24)">FT OU</em>
+          </li>
+        </ul>
+      </div>
+      <div class="gameGpBd">
+        <% for(let j = 0; j < country.length; j += 1 ) { -%>
+          <% const { name, icon, score, strong, odds, HDP, OU } = country[j]; -%>
+          <ul class="gameGpTr">
+            <li class="gameGpTh Pr(14,t) Pr(10,m)">
+              <a href="javascript:;" class="D(fx) Ai(c)">
+                <div class="D(fx) Fxd(row-r) Ai(c) Jc(e) Col(11/12) Ov(hide)">
+                  <em class="Fz(30) Ml(12,t) Ml(8,m)<%- strong ? ' C(xf457)' : '' %> Tov(...)"><%- name %></em>
+                  <%- require('../../_components/img.ejs')({
+                    className: {
+                      figure: 'W(40) Fxsh'
+                    },
+                    path: icon,
+                    alt: name
+                  }) %>
+                </div>
+                <b class="Col(1/12) Ml(12,t) Ml(8,m) D(b)"><%- score %></b>
+              </a>
+            </li>
+            <li class="gameGpTh Ta(c)">
+              <%- require('../../_components/mData.ejs')({
+                title: {
+                  value : (j + 1)
+                },
+                data: {
+                  style : {
+                    fontSize: 'Fz(26)'
+                  },
+                  value: odds
+                }
+              }) %>
+            </li>
+            <li class="gameGpTh Ta(c)">
+              <%- require('../../_components/mData.ejs')({
+                title: {
+                  value : (j === 0 ? '-0.5 / 1' : '0.5 / 1')
+                },
+                data: {
+                  style : {
+                    fontSize: 'Fz(26)'
+                  },
+                  value: HDP
+                }
+              }) %>
+            </li>
+            <li class="gameGpTh Ta(c)">
+              <%- require('../../_components/mData.ejs')({
+                title: {
+                  value : (j === 0 ? 'o 2/2.5' : 'u 2/2.5')
+                },
+                component: {
+                  path: 'mStock',
+                  data: {
+                    style : {
+                      fontSize: 'Fz(26)'
+                    },
+                    stock: OU.odds,
+                    value: OU.value
+                  }
+                }
+              }) %>
+            </li>
+          </ul>
+        <% } -%>
+        <ul class="gameGpTr">
+          <li class="gameGpTh Pr(10)">
+            <div class="D(fx) Ai(c)">
+              <ul class="D(ifx) Ai(c) Fxg">
+                <li class="Mr(12,t) Mr(8,m)">
+                  <button type="button" class="D(b)">
+                    <%- require('../../_components/svg.ejs')({
+                      className: 'WH(40) Fi(xeef2)',
+                      svgName: 'star'
+                    }) %>
+                  </button>
+                </li>
+                <!-- 沒有影片移除 li -->
+                <li class="Mr(6,t) Mr(4,m)">
+                  <button type="button" class="D(b)">
+                    <%- require('../../_components/svg.ejs')({
+                      className: 'WH(32) Fi(x26eb)',
+                      svgName: 'video-o'
+                    }) %>
+                  </button>
+                </li>
+                <!-- 沒有動畫移除 li -->
+                <li>
+                  <button type="button" class="D(b)">
+                    <%- require('../../_components/svg.ejs')({
+                      className: 'WH(32) Fi(x26eb)',
+                      svgName: 'soccer-field-o'
+                    }) %>
+                  </button>
+                </li>
+              </ul>
+              <a href="javascript:;" class="D(ifx) Ai(c)">
+                <em class="C(x26eb) Fz(24)">+24</em>
+                <%- require('../../_components/svg.ejs')({
+                  className: 'WH(32) Fi(x26eb)',
+                  svgName: 'arrow-right-less'
+                }) %>
+              </a>
+            </div>
+          </li>
+          <li class="gameGpTh Ta(c)">
+            <div class="M(3,t) M(2,m) P(8,t) P(5,m) Bgc(xfffa) Fz(24) Bdrs(3)">
+              <p class="C(x9abf)">x</p>
+              <p><%- total %></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% } -%>
+</div>

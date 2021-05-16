@@ -1,0 +1,287 @@
+.mTicket {
+  bottom: -100%;
+  left: 0;
+  height: 86vh;
+  z-index: 5;
+  transition: bottom var(--anim-time);
+
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+
+  &:not(.act) {
+    bottom: -100%;
+
+    &::before {
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      transition: width 0s var(--anim-time), height 0s var(--anim-time), background-color var(--anim-time) 0s;
+    }
+  }
+
+  &.act {
+    bottom: 0;
+
+    &::before {
+      width: 100vw;
+      height: 100vh;
+      transition: width 0s 0s, height 0s 0s, background-color var(--anim-time) 0s;
+    }
+  }
+}
+
+.mTicketTitle {
+  &::after {
+    content: attr(notice);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+  }
+}
+
+.mTicketTabHd {
+  box-shadow: 0 0 8px 0 rgba(#000, 0.15);
+}
+
+.mTicketCardItem {
+  box-shadow: 0 1px 8px 0 rgba(#000, 0.1);
+
+  &.--close {
+    &::before {
+      content: attr(close-msg);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: bold;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &.--fit {
+    &::after {
+      top: 0;
+      left: 0;
+      height: 100%;
+      content: "";
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}
+
+.mTicketTabCtrl {
+  &::after {
+    content: "";
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: width var(--anim-time);
+  }
+
+  &.act {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.mTicketTool {
+  left: 50%;
+  bottom: 0;
+  box-shadow: 0 -1px 12px 0 rgba(#2f3542, 0.1);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.mTicketLive {
+  > i {
+    transform: scale(0.9);
+  }
+}
+
+.mTicketStock {
+  &.Bgc\(xf457\), &.Bgc\(x0d9a\) {
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: relative;
+    }
+
+    &.Bgc\(xf457\) {
+      &::after {
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.Bgc\(x0d9a\) {
+      &::after {
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+  }
+}
+
+.mTicketMultipleList {
+  transition: max-height var(--anim-time);
+
+  &:not(.act) {
+    max-height: 0;
+  }
+}
+
+@mixin T {
+  .mTicketHd {
+    height: vmt(60px);
+  }
+
+  .mTicketTitle {
+    &::after {
+      margin-left: vmt(12px);
+      width: vmt(26px);
+      height: vmt(26px);
+      line-height: vmt(26px);
+      font-size: vmt(20px);
+    }
+  }
+
+  .mTicketBd {
+    height: calc(100% - vmt(60px));
+  }
+
+  .mTicketCnt {
+    &.--single {
+      padding-bottom: vmt(190px);
+    }
+
+    &.--multiple {
+      padding-bottom: vmt(360px);
+    }
+  }
+
+  .mTicketTabCtrl {
+    &::after {
+      height: vmt(3px);
+    }
+  }
+
+  .mTicketStock {
+    &::after {
+      margin-left: vmt(6px);
+    }
+
+    &.Bgc\(xf457\) {
+      &::after {
+        border-width: 6px 4px 0 4px;
+      }
+    }
+
+    &.Bgc\(x0d9a\) {
+      &::after {
+        border-width: 0 4px 6px 4px;
+      }
+    }
+  }
+
+  .mTicketCardItem {
+    &.--close {
+      &::before {
+        font-size: vmt(25px);
+      }
+    }
+
+    &.--fit {
+      &::after {
+        width: vmt(6px);
+      }
+    }
+  }
+}
+
+@mixin M {
+  .mTicketHd {
+    height: vmm(44px);
+  }
+
+  .mTicketTitle {
+    &::after {
+      margin-left: vmm(8px);
+      width: vmm(18px);
+      height: vmm(18px);
+      line-height: vmm(18px);
+      font-size: vmm(13px);
+    }
+  }
+
+  .mTicketBd {
+    height: calc(100% - vmm(44px));
+  }
+
+  .mTicketCnt {
+    &.--single {
+      padding-bottom: vmm(144px);
+    }
+
+    &.--multiple {
+      padding-bottom: vmm(260px);
+    }
+  }
+
+  .mTicketTabCtrl {
+    &::after {
+      height: vmm(2px);
+    }
+  }
+
+  .mTicketStock {
+    &::after {
+      margin-left: vmm(4px);
+    }
+
+    &.Bgc\(xf457\) {
+      &::after {
+        border-width: 4px 3px 0 3px;
+      }
+    }
+
+    &.Bgc\(x0d9a\) {
+      &::after {
+        border-width: 0 3px 4px 3px;
+      }
+    }
+  }
+
+  .mTicketCardItem {
+    &.--close {
+      &::before {
+        font-size: vmm(17px);
+      }
+    }
+
+    &.--fit {
+      &::after {
+        width: vmm(4px);
+      }
+    }
+  }
+}

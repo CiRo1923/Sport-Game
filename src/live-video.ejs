@@ -1,0 +1,30 @@
+<%
+    htmlWebpackPlugin.options.backURL = null;
+    htmlWebpackPlugin.options.refresh = true;
+    htmlWebpackPlugin.options.tools = true;
+-%>
+<div class="media">
+  <%- require('_components/live/mediaHd.ejs')({
+    href : 'live-league.html'
+  }) %>
+  <div class="mediaBd">
+    <div class="video"></div>
+  </div>
+</div>
+<%- require('_components/live/tab.ejs')({
+  act  : 1,
+  tabs : [{
+    name : '比分数据',
+    href : 'live-score.html',
+    icon : 'score'
+  }, {
+    name : '直播视频',
+    href : 'live-video.html',
+    icon : 'video'
+  }, {
+    name : '赛事动画',
+    href : 'live-anim.html',
+    icon : 'soccer-field'
+  }]
+}) %>
+<%- require('_components/live/content.ejs')() %>

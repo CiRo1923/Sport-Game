@@ -1,0 +1,14 @@
+<div class="mSelect">
+  <% if ( type === 'anchor' ) { -%>
+    <a href="<%- options[0].value %>" class="mSelectType C(x7799) Bgc(xf) Fz(26) Pr(48,t) Pl(20,t) Pr(32,m) Pl(12,m) Py(9,t) Py(6,m)">
+      <em><%- options[0].text %></em>
+    </a>
+  <% } else if ( type === 'select' ) { -%>
+    <select name="" class="mSelectType C(x7799) Bgc(xf) Fz(26) Pr(48,t) Pl(20,t) Pr(32,m) Pl(12,m) Py(9,t) Py(6,m)">
+      <% for(let i = 0; i < options.length; i += 1) { -%>
+        <% const {text, value} = options[i]; -%>
+        <option value="<%- value %>"><%- text %></option>
+      <% } -%>
+    </select>
+  <% } -%>
+</div>

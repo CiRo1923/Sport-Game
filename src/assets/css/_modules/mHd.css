@@ -1,0 +1,15 @@
+.mHd {
+  box-shadow: rgba(color(x0, rgb), 0.1) 0 1px 8px 0;
+}
+
+@mixin T {
+  .mHd {
+    height: vmt(var(--tablet-header-height));
+  }
+}
+
+@mixin M {
+  .mHd {
+    height: vmm(var(--mobile-header-height));
+  }
+}

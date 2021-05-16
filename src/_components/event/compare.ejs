@@ -1,0 +1,15 @@
+<div class="compare">
+  <div class="compareBd P(12,t) P(8,m) Ov(hide)">
+    <ul class="M(-3,t) M(-2,m) D(fx) Ai(c) Fxw(w)">
+      <% for(let i = 0; i < data.length; i += 1 ) { -%>
+        <% const {name, compare} = data[i];  -%>
+        <li class="P(3,t) P(2,m) Col(6/12) Bxz(bd)">
+          <div class="D(fx) Ai(c) Bgc(xfffa) Bdrs(3) Px(12,t) Px(8,m) Py(14,t) Py(10,m)">
+            <em class="Fxg C(x9abf)"><%- name %></em>
+            <b class="Fxsh"><%- compare %></b>
+          </div>
+        </li>
+      <% } -%>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+/* common */
+@import "_library";
+
+/* page */
+@import "_bet/tab";
+@import "_bet/card";
+@import "_bet/tag";

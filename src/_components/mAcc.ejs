@@ -1,0 +1,21 @@
+<div class="mAcc<%- typeof frameClassName !== 'undefined' ? ` ${frameClassName}` : '' %>">
+  <ul class="mAccGp<%- typeof bdClassName !== 'undefined' ? ` ${bdClassName}` : '' %>">
+    <% for(let i = 0; i < data.length; i += 1) { -%>
+      <%
+        const { title, subData, act } = data[i];
+      -%>
+      <li class="jAcc">
+        <button type="button" class="mAccCtrl D(fx) Ai(c) Ta(l) Px(24,t) Px(16,m) Py(9,t) Py(6,m) W(full) Bgc(x9abf) C(xf) Bxz(bd)<%- act ? ' act' : '' %> jAccCtrl">
+          <b class="Fxg Fz(30)"><%- title %></b>
+          <%- require('_components/svg.ejs')({
+            className: `mAccIcon Fxsh Fi(xf) ${iconClassName}`,
+            svgName: iconName
+          }) %>
+        </button>
+        <div class="mAccList Ov(hide) jAccList">
+          <%- require(`_components/${component.path}.ejs`)(subData) %>
+        </div>
+      </li>
+    <% } -%>
+  </ul>
+</div>

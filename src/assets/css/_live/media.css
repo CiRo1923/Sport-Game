@@ -1,0 +1,24 @@
+.mediaHdIcon {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin T {
+  .mediaHdMenuCtrl {
+    height: vmt(var(--tablet-header-height));
+  }
+
+  .mediaHdIcon {
+    left: vmt(16px);
+  }
+}
+
+@mixin M {
+  .mediaHdMenuCtrl {
+    height: vmm(var(--mobile-header-height));
+  }
+
+  .mediaHdIcon {
+    left: vmm(12px);
+  }
+}

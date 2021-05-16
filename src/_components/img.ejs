@@ -1,0 +1,53 @@
+<%
+  const newPath = {
+    p: typeof path === 'object' ? path.p : path,
+    m: typeof path === 'object'
+          ? typeof path.m !== 'undefined'
+              ? path.m
+              : null
+          : /(\?|\&)(mobile)(\&|$)/.test(path)
+              ? path
+              : null
+  };
+
+  const img = {
+        p : {
+            path: /.*(?=\?.*$)/.test(newPath.p) ? /.*(?=\?.*$)/.exec(newPath.p)[0] : newPath.p,
+            webpPath: /^.*(?=\.)/.exec(newPath.p)[0],
+            webp: /(\?|\&)(webp)(\&|$)/.test(newPath.p)
+        },
+        m : {
+            path: newPath.m
+                  ? /(\?|\&)(mobile)(\&|$)/.test(newPath.m)
+                      ? /.*(?=\?.*$)/.exec(newPath.m)[0].replace(/\./, '-m.')
+                      : /.*(?=\?.*$)/.exec(newPath.m)[0]
+                  : null,
+            webpPath: newPath.m
+                      ? /(\?|\&)(mobile)(\&|$)/.test(newPath.m)
+                          ? (/^.*(?=\.)/.exec(newPath.m)[0] + '-m')
+                          : /^.*(?=\.)/.exec(newPath.m)[0]
+                      : null,
+            webp: newPath.m
+                  ? /(\?|\&)(webp|mobile)\&(webp|mobile)$/.test(newPath.m)
+                  : /\?webp$/.test(newPath.m)
+        }
+    };
+-%>
+<figure<%- typeof className !== 'undefined' && className.figure !== 'undefined' ? ` class="${ className.figure }"` : '' %>>
+  <% if ( img.m.path || img.p.webp || img.m.webp ) { -%>
+    <picture>
+      <% if ( img.m.path || img.m.webp ) { -%>
+        <source data-srcset="<%- img.m.webpPath %>.webp" type="image/webp" media="(max-width: 414px)">
+      <% } -%>
+      <% if ( img.m.path ) { -%>
+        <source data-srcset="<%- img.m.path %>" media="(max-width: 414px)">
+      <% } -%>
+      <% if ( img.p.webp ) { -%>
+        <source data-srcset="<%- img.p.webpPath %>.webp" type="image/webp">
+      <% } -%>
+    <% } -%>
+        <img src="<%= require('/assets/img/common/lazyload.png') %>" data-src="<%- img.p.path %>" class="lazy" alt="<%- alt %>" width="100%" height="100%">
+    <% if ( img.m.path || img.p.webp || img.m.webp ) { -%>
+      </picture>
+    <% } -%>
+</figure>

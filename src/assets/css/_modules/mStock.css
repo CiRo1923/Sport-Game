@@ -1,0 +1,71 @@
+.mStock {
+  position: relative;
+
+  &.C\(xf457\), &.C\(x0d9a\) {
+    &::after {
+      content: "";
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+      transform: translateY(-50%);
+    }
+
+    &.C\(xf457\) {
+      &::after {
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    &.C\(x0d9a\) {
+      &::after {
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin T {
+  .mStock {
+    &::after {
+      right: vmt(-20px);
+    }
+
+    &.C\(xf457\) {
+      &::after {
+        border-width: 9px 6px 0 6px;
+      }
+    }
+
+    &.C\(x0d9a\) {
+      &::after {
+        border-width: 0 6px 9px 6px;
+      }
+    }
+  }
+}
+
+@mixin M {
+  .mStock {
+    &::after {
+      right: vmm(-14px);
+    }
+
+    &.C\(xf457\) {
+      &::after {
+        border-width: 6px 4px 0 4px;
+      }
+    }
+
+    &.C\(x0d9a\) {
+      &::after {
+        border-width: 0 4px 6px 4px;
+      }
+    }
+  }
+}

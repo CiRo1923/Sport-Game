@@ -1,0 +1,207 @@
+<%
+    htmlWebpackPlugin.options.backURL = true;
+    htmlWebpackPlugin.options.refresh = true;
+    htmlWebpackPlugin.options.tools = true;
+-%>
+<%- require('_components/event/ball.ejs')({
+  act: 1
+}) %>
+<%- require('_components/event/tab.ejs')({
+  act: 1,
+  tabs: [{
+    name   : '滚球',
+    href   : 'event-live.html',
+    notice : 22
+  }, {
+    name   : '今日',
+    href   : 'event-today.html',
+    notice : 89
+  }, {
+    name   : '早盘',
+    href   : 'event-early-market.html',
+    notice : 125
+  }, {
+    name   : '冠军',
+    href   : 'event-champion.html',
+    notice : 28
+  }]
+}) %>
+<div class="Px(12,t) Mt(24,t) Px(8,m) Mt(16,m) in.Mt(20,t) in.Mt(12,m)">
+  <%- require('_components/mSelect.ejs')({
+    type: 'anchor',
+    options: [{
+      text: '选择联赛',
+      value: 'event-today-league.html'
+    }]
+  }) %>
+
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : true,
+    act         : true,
+    countryIcon : `${require('/assets/img/event/country/sky-sports-premier-league.png')}&webp`,
+    countryName : 'England Premier League',
+    notice      : 2,
+    content     : {
+      component : {
+        path : 'event/game',
+        data : [{
+          info: '上半场 34:44',
+          country : [{
+            name   : 'Leicester City',
+            icon   : `${require('/assets/img/event/country/manchester.png')}&webp`,
+            strong : true,
+            score  : 1,
+            odds   : 1.25,
+            HDP    : 1.49,
+            OU     : {
+              value: 1.64,
+              odds: null
+            }
+          }, {
+            name   : 'Liverpool',
+            icon   : `${require('/assets/img/event/country/liverpool.png')}&webp`,
+            strong : false,
+            score  : 0,
+            odds   : 2.40,
+            HDP    : 1.77,
+            OU     : {
+              value: 1.88,
+              odds: null
+            }
+          }],
+          total: 1.74
+        }]
+      }
+    }
+  }) %>
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : true,
+    act         : true,
+    countryIcon : `${require('/assets/img/event/country/bundesliga.png')}&webp`,
+    countryName : 'England Premier League',
+    notice      : 2,
+    content     : {
+      component : {
+        path : 'event/game',
+        data : [{
+          info: '上半场 34:44',
+          country : [{
+            name   : 'Leicester City',
+            icon   : `${require('/assets/img/event/country/bayer-leverkusen.png')}&webp`,
+            strong : true,
+            score  : 1,
+            odds   : 1.25,
+            HDP    : 1.49,
+            OU     : {
+              value: 1.64,
+              odds: 'UP'
+            }
+          }, {
+            name   : 'Liverpool',
+            icon   : `${require('/assets/img/event/country/bayern-munich.png')}&webp`,
+            strong : false,
+            score  : 0,
+            odds   : 2.40,
+            HDP    : 1.77,
+            OU     : {
+              value: 1.88,
+              odds: 'Down'
+            }
+          }],
+          total: 1.74
+        }, {
+          info: '下半场 30:40',
+          country : [{
+            name   : 'Borussia Dortmund',
+            icon   : `${require('/assets/img/event/country/dortmund.png')}&webp`,
+            strong : true,
+            score  : 1,
+            odds   : 1.25,
+            HDP    : 1.49,
+            OU     : {
+              value: 1.64,
+              odds: 'UP'
+            }
+          }, {
+            name   : 'Bayern Munich',
+            icon   : `${require('/assets/img/event/country/bayern-münchen.png')}&webp`,
+            strong : false,
+            score  : 0,
+            odds   : 2.40,
+            HDP    : 1.77,
+            OU     : {
+              value: 1.88,
+              odds: 'Down'
+            }
+          }],
+          total: 1.74
+        }]
+      }
+    }
+  }) %>
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : false,
+    act         : true,
+    countryIcon : `${require('/assets/img/event/country/sky-sports-premier-league.png')}&webp`,
+    countryName : 'England Premier League',
+    notice      : 2,
+    content     : {
+      component : {
+        path : 'event/game',
+        data : [{
+          info: '今日 15:30',
+          country : [{
+            name   : 'Southampton',
+            icon   : `${require('/assets/img/event/country/atalanta-juventus.png')}&webp`,
+            strong : false,
+            score  : 1,
+            odds   : 1.25,
+            HDP    : 1.49,
+            OU     : {
+              value: 1.64,
+              odds: null
+            }
+          }, {
+            name   : 'Crystal Palace',
+            icon   : `${require('/assets/img/event/country/liverpool.png')}&webp`,
+            strong : false,
+            score  : 0,
+            odds   : 2.40,
+            HDP    : 1.77,
+            OU     : {
+              value: 1.88,
+              odds: null
+            }
+          }],
+          total: 1.74
+        }, {
+          info: '今日 18:00',
+          country : [{
+            name   : 'Chelsea',
+            icon   : `${require('/assets/img/event/country/real-madrid.png')}&webp`,
+            strong : false,
+            score  : 1,
+            odds   : 1.25,
+            HDP    : 1.49,
+            OU     : {
+              value: 1.64,
+              odds: null
+            }
+          }, {
+            name   : 'West Ham',
+            icon   : `${require('/assets/img/event/country/manchester.png')}&webp`,
+            strong : false,
+            score  : 0,
+            odds   : 2.40,
+            HDP    : 1.77,
+            OU     : {
+              value: 1.88,
+              odds: null
+            }
+          }],
+          total: 1.74
+        }]
+      }
+    }
+  }) %>
+</div>

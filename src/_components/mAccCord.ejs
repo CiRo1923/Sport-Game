@@ -1,0 +1,30 @@
+<!-- Live 帶 className Bgc(xfff0); 不是 Live 帶 className Bgc(xf) -->
+<div class="mAccCard <%- isLive ? 'Bgc(xfff0)' : 'Bgc(xf)' %> Pos(r) jAccCard">
+  <!-- 預設打開加入 className act -->
+  <button type="button" class="mAccCardHd<%- act ? ' act' : '' %> Px(12,t) Py(14,t) Px(8,m) Py(10,m) D(fx) Ai(c) W(full) Bxz(bd) Ta(l) jAccCardCtrl">
+    <div class="mAccCardHdCnt Mr(5) D(fx) Ai(c) Fxg $af.C(xf) <%- isLive ? '$af.Bgc(xfc66)' : '$af.Bgc(x9abf)' %>"<%- notice ? ` notice="${notice}"` : '' %>>
+      <% if( isLive ) { -%>
+        <small class="mFlag D(ib) $bf.Bgc(xf457) Ml(-12,t) Mr(12,t) Ml(-8,m) Mr(8,m) Fxsh"><b class="Fz(24) Fst(i) C(xf)">LIVE</b></small>
+      <% } -%>
+      <%- require('../_components/img.ejs')({
+        className: {
+          figure: 'W(40) Fxsh Mr(6,t) Mr(4,m)'
+        },
+        path: countryIcon,
+        alt: countryName
+      }) %>
+      <p class="Fz(26) Fxg"><b><%- countryName %></b></p>
+    </div>
+    <%- require('../_components/svg.ejs')({
+      className: 'mAccCardIcon WH(40) Fi(x9abf)',
+      svgName: 'arrow-up-less'
+    }) %>
+  </button>
+  <% if ( typeof content !== 'undefined' && typeof content.component !== 'undefined' ) { -%>
+    <div class="mAccCardBd $bf.Bgc(xfff7) Ov(hide) Pos(r) jAccCardBd">
+      <%- require(`../_components/${content.component.path}.ejs`)({
+        data: content.component.data
+      }) %>
+    </div>
+  <% } -%>
+</div>

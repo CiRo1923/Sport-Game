@@ -1,0 +1,30 @@
+<div class="mForm<%- typeof className !== 'undefined' && typeof className.frame !== 'undefined' ? ` ${className.frame}` : '' %> jForm">
+  <% if ( type === 'select' ) { -%>
+    <div class="mFormElem">
+      <select class="mFormType Bgc(xf) Bdrs(6) W(full) Pl(16,t) Pl(12,m) Pr(52,t) Pr(36,m) Py(12,t) Py(8,m) Fz(30)">
+        <% for(let i = 0; i < options.length; i += 1) { -%>
+          <% const {name, value, selected} = options[i]; -%>
+          <option value="<%-value  %>"<%- selected ? ' selected': '' %>><%- name %></option>
+        <% } -%>
+      </select>
+    </div>
+  <% } else if ( type !== 'redia' && type !== 'checkbox' ) { -%>
+    <div class="mFormElem">
+      <input type="<%- type %>" class="mFormType"<%- typeof validate !== 'undefined' ? ` :validate="${validate}"` : '' %><%- typeof placeholder !== 'undefined' ? ` placeholder="${placeholder}"` : '' %>>
+    </div>
+  <% } else if ( type === 'checkbox' ) { -%>
+    <label class="mFormElem D(ifx) Ai(c)">
+      <input type="checkbox" class="mFormType Pos(a)<%- typeof id !== 'undefined' ? ` jFormCheckBox${id}` : '' %>">
+      <div class="WH(32) Mr(12,t) Mr(8,m) Ov(hide) Bdrs(2) Bgc(xbbd1) checked:Bgc(x26eb)">
+        <%- require('../_components/svg.ejs')({
+          className: 'WH(32) Fi(xf)',
+          svgName: 'check'
+        }) %>
+      </div>
+      <% if ( typeof text !== 'ubdefined' ) { -%>
+        <p class="Fz(26)"><%- text %></p>
+      <% } -%>
+    </label>
+  <% }  -%>
+  <span class="mFormError D(b) Mt(6,t) Mt(4,m) Fz(26) C(xf457) jFormError"></span>
+</div>

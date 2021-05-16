@@ -1,0 +1,11 @@
+<ul class="Py(9,t) Py(6,m)">
+  <% for (let i = 0; i < league.length; i += 1) { -%>
+    <% const { name, number } = league[i]; -%>
+    <li>
+      <!-- 選到的聯賽新增 className act； url 後的參數可自行替換 -->
+      <a href="event-today.html?country=<%- en %>&league=<%- (i + 1) %>" class="D(b) Px(24,t) Px(16,m) Py(9,t) Py(6,m) act:Bgc(x26eb) act:C(xf)">
+        <em class="Fz(30)"><%- name %> (<%- number %>)</em>
+      </a>
+    </li>
+  <% } -%>
+</ul>

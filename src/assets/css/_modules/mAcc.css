@@ -1,0 +1,33 @@
+.mAccIcon {
+  transform-origin: center center;
+  transform: rotate(0deg);
+  transition: transform var(--anim-time) linear;
+}
+
+.mAccList {
+  transition: max-height var(--anim-time);
+}
+
+.mAccCtrl {
+  &:not(.act) {
+    & ~ .mAccList {
+      max-height: 0;
+    }
+
+    > .mAccIcon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@mixin T {
+  .mAccCtrl {
+    min-height: vmt(50px);
+  }
+}
+
+@mixin M {
+  .mAccCtrl {
+    min-height: vmm(34px);
+  }
+}

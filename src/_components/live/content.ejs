@@ -1,0 +1,182 @@
+<div class="Px(12,t) My(12,t) Px(8,m) My(8,m)">
+  <ul class="D(fx) Ai(c) Jc(betw)">
+    <li>
+      <%- require('../../_components/mSelect.ejs')({
+        type: 'select',
+        options: [{
+          text: '选择盘口',
+          value: ''
+        }, {
+          text: '主要盘口',
+          value: '1'
+        }, {
+          text: '让球',
+          value: '2'
+        }, {
+          text: '进球',
+          value: '3'
+        }]
+      }) %>
+    </li>
+    <li>
+      <div class="D(fx) Ai(c)">
+        <%- require('../../_components/mBtn.ejs')({
+          className : 'Mr(16,t) Mr(12,m) jAccAllClose',
+          text      : '收起列表',
+          icon      : 'chevron-double-top'
+        }) %>
+        <button type="button">
+          <%- require('_components/svg.ejs')({
+            className: 'WH(48) Fi(x7799)',
+            svgName: 'refresh'
+          }) %>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+<%- require('../../_components/mAcc.ejs')({
+  iconClassName : 'WH(48)',
+  iconName      : 'arrow-up-less',
+  bdClassName   : 'in.Mt(36,t) in.Mt(24,m)',
+  data          : [{
+    title   : '全場',
+    act     : true,
+    subData : {
+      score: [{
+        title: '1',
+        value: 2.06
+      }, {
+        title: 'X',
+        value: 2.06
+      }, {
+        title: '2',
+        value: 2.06
+      }],
+      handicap: [[
+        {
+          title: '-1.5',
+          value: 2.02
+        }, {
+          title: '-1 / 1.5',
+          value: 2.06
+        }, {
+          title: '-2 / 2.5',
+          value: 2.06
+        }
+      ], [
+        {
+          title: '1.5',
+          value: 2.09
+        }, {
+          title: '1 / 1.5',
+          value: 2.06
+        }, {
+          title: '2 / 2.5',
+          value: 2.06
+        }
+      ]],
+      OU: [[
+        {
+          title: '0.5 / 1',
+          value: 2.06
+        }, {
+          title: '1.5 / 2',
+          value: 2.06
+        }, {
+          title: '2 / 3.5',
+          value: 2.06
+        }
+      ], [
+        {
+          title: '0.5 / 1',
+          value: 2.09
+        }, {
+          title: '1.5 / 2',
+          value: 2.06
+        }, {
+          title: '2 / 3.5',
+          value: 2.06
+        }
+      ]],
+      OE: [{
+        title: 'Odd',
+        value: 2.06
+      }, {
+        title: 'Even',
+        value: 2.06
+      }]
+    }
+  }, {
+    title   : '上半場',
+    act     : true,
+    subData : {
+      score: [{
+        title: '1',
+        value: 'lock'
+      }, {
+        title: 'X',
+        value: 'lock'
+      }, {
+        title: '2',
+        value: 'lock'
+      }],
+      handicap: [[
+        {
+          title: '-1.5',
+          value: 2.02
+        }, {
+          title: '-1 / 1.5',
+          value: 2.06
+        }, {
+          title: '-2 / 2.5',
+          value: 2.06
+        }
+      ], [
+        {
+          title: '1.5',
+          value: 2.09
+        }, {
+          title: '1 / 1.5',
+          value: 2.06
+        }, {
+          title: '2 / 2.5',
+          value: 2.06
+        }
+      ]],
+      OU: [[
+        {
+          title: '0.5 / 1',
+          value: 2.06
+        }, {
+          title: '1.5 / 2',
+          value: 2.06
+        }, {
+          title: '2 / 3.5',
+          value: 2.06
+        }
+      ], [
+        {
+          title: '0.5 / 1',
+          value: 2.09
+        }, {
+          title: '1.5 / 2',
+          value: 2.06
+        }, {
+          title: '2 / 3.5',
+          value: 2.06
+        }
+      ]],
+      OE: [{
+        title: 'Odd',
+        value: 2.06
+      }, {
+        title: 'Even',
+        value: 2.06
+      }]
+    }
+  }],
+  component : {
+    path : 'live/card'
+  }
+}) %>

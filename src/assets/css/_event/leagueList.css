@@ -1,0 +1,21 @@
+.leagueListIcon {
+  transform-origin: center center;
+  transform: rotate(0deg);
+  transition: transform var(--anim-time) linear;
+}
+
+.leagueListDate {
+  transition: max-height var(--anim-time);
+}
+
+.leagueListCtrl {
+  &:not(.act) {
+    & ~ .leagueListDate {
+      max-height: 0;
+    }
+
+    > .leagueListIcon {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.gameGp {
+  width: 100%;
+  box-sizing: border-box;
+  display: table;
+  table-layout: fixed;
+
+  &:first-child {
+    border-top-width: 0;
+  }
+}
+
+.gameGpHd {
+  display: table-header-group;
+}
+
+.gameGpBd {
+  display: table-row-group;
+}
+
+.gameGpTr {
+  display: table-row;
+}
+
+.gameGpTh,
+.gameGpTd {
+  display: table-cell;
+  vertical-align: middle;
+}

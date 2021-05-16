@@ -1,0 +1,208 @@
+<%
+    htmlWebpackPlugin.options.backURL = true;
+    htmlWebpackPlugin.options.refresh = false;
+    htmlWebpackPlugin.options.tools = false;
+-%>
+<div class="leagueList">
+  <div class="leagueListBd">
+    <%- require('_components/mAcc.ejs')({
+      iconClassName : 'WH(32) Fxsh Fi(xf)',
+      iconName      : 'arrow-up-less',
+      bdClassName   : 'in.Mt(1)',
+      data          : [{
+        title : 'England Premier League',
+        act     : true,
+        subData : {
+          en     : 'england',
+          league : [{
+            list : [{
+              name   : 'Manchester United',
+              number : null
+            }, {
+              name   : 'Leicester City',
+              number : null
+            }],
+            isLive : false,
+            value  : 'Today 14:00'
+          }, {
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : 'Today 16:00'
+          }, {
+            list : [{
+              name   : 'West Ham',
+              number : null
+            }, {
+              name   : 'Liverpool',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'Germany Bundesliga',
+        act     : false,
+        subData : {
+          en      : 'germany',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'UEFA Champions League',
+        act     : false,
+        subData : {
+          en      : 'uefa',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'Serie A',
+        act     : false,
+        subData : {
+          en      : 'serie',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'England U23 Development League',
+        act     : false,
+        subData : {
+          en      : 'england',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'Australia Western Australia Premier League',
+        act     : false,
+        subData : {
+          en      : 'western',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'Argentina Women Regional League - 80 mins play',
+        act     : false,
+        subData : {
+          en      : 'women',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'UEFA Champions League',
+        act     : false,
+        subData : {
+          en      : 'champions',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'Germany Bundesliga',
+        act     : false,
+        subData : {
+          en      : 'germany',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }, {
+        title : 'England U23 Development League',
+        act     : false,
+        subData : {
+          en      : 'england',
+          league : [{
+            list : [{
+              name   : 'Southampton',
+              number : null
+            }, {
+              name   : 'Chelsea',
+              number : null
+            }],
+            isLive : false,
+            value  : '14:00, 22 Feb 2021'
+          }]
+        }
+      }],
+      component : {
+        path : 'live/league'
+      }
+    }) %>
+    </div>
+</div>

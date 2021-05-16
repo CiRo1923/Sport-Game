@@ -1,0 +1,118 @@
+select.mFormType {
+  border: 0;
+  display: block;
+  appearance: none;
+  background-image: url(~common/form-arrow.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  box-shadow: 0 1px 8px 0 rgba(#000, 0.1);
+}
+
+input.mFormType {
+  &:not([type="checkbox"]):not([type="radio"]) {
+    width: 100%;
+    border: 1px solid #b6bed1;
+    border-radius: 6px;
+    transition: border-color var(--anim-time);
+  }
+
+  &[type="checkbox"] {
+    left: -99999px;
+
+    & + * {
+      transition: background-color var(--anim-time);
+    }
+  }
+}
+
+.mFormElem {
+  position: relative;
+
+  &::before {
+    content: "!";
+    top: 50%;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    background-color: #ff4757;
+    border-radius: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: opacity var(--anim-time);
+  }
+
+  &.error {
+    &::before {
+      opacity: 1;
+    }
+
+    input.mFormType {
+      &:not([type="checkbox"]):not([type="radio"]) {
+        border-color: #ff4757;
+      }
+    }
+  }
+}
+
+.mFormType {
+  box-sizing: border-box;
+  outline: 0;
+
+  &::placeholder {
+    color: #b6bed1;
+  }
+}
+
+@mixin T {
+  select.mFormType {
+    height: vmt(60px);
+    background-position-x: calc(100% - vmt(12px));
+    background-size: vmt(36px) vmt(36px);
+  }
+
+  .mFormElem {
+    &::before {
+      margin-right: vmt(12px);
+      width: vmt(20px);
+      height: vmt(20px);
+      line-height: vmt(20px);
+    }
+  }
+
+  input.mFormType {
+    &:not([type="checkbox"]):not([type="radio"]) {
+      padding-right: vmt(16px);
+      padding-left: vmt(16px);
+      font-size: vmt(22px);
+      height: vmt(50px);
+    }
+  }
+}
+
+@mixin M {
+  select.mFormType {
+    height: vmm(40px);
+    background-position-x: calc(100% - vmm(8px));
+    background-size: vmm(24px) vmm(24px);
+  }
+
+  .mFormElem {
+    &::before {
+      margin-right: vmm(8px);
+      width: vmm(14px);
+      height: vmm(14px);
+      line-height: vmm(14px);
+    }
+  }
+
+  input.mFormType {
+    &:not([type="checkbox"]):not([type="radio"]) {
+      padding-right: vmm(12px);
+      padding-left: vmm(12px);
+      font-size: vmm(15px);
+      height: vmm(34px);
+    }
+  }
+}

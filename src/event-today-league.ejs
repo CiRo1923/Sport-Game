@@ -1,0 +1,140 @@
+<%
+    htmlWebpackPlugin.options.backURL = true;
+    htmlWebpackPlugin.options.refresh = false;
+    htmlWebpackPlugin.options.tools = false;
+-%>
+<div class="leagueList">
+  <div class="leagueListBd">
+    <div class="Mb(3,t) Mb(2,m)">
+      <!-- 預設的聯賽新增 className act -->
+      <a href="event-today.html" class="Px(24,t) Px(16,m) Py(9,t) Py(6,m) D(b) Bgc(x9abf) act:Bgc(x26eb) C(xf) act">
+        <em class="Fz(30)">全部賽事</em>
+      </a>
+    </div>
+    <%- require('_components/mAcc.ejs')({
+      iconClassName : 'WH(32) Fxsh Fi(xf)',
+      iconName      : 'arrow-up-less',
+      bdClassName   : 'in.Mt(3,t) in.Mt(2,m)',
+      data          : [{
+        title : '欧洲',
+        act     : true,
+        subData : {
+          en      : 'europe',
+          league  : [{
+            name   : '欧洲冠军联赛',
+            number : 6
+          }, {
+            name   : '欧联杯',
+            number : 4
+          }]
+        }
+      }, {
+        title : '英国',
+        act     : true,
+        subData : {
+          en      : 'england',
+          league  : [{
+            name   : '英格兰超级联赛',
+            number : 23
+          }, {
+            name   : '英格兰联赛杯',
+            number : 12
+          }, {
+            name   : '英格兰冠军联赛',
+            number : 2
+          }, {
+            name   : '英格兰甲级联赛',
+            number : 2
+          }, {
+            name   : '英格兰乙级联赛',
+            number : 0
+          }, {
+            name   : '英格兰全国联赛',
+            number : 4
+          }]
+        }
+      }, {
+        title : '西班牙',
+        act     : true,
+        subData : {
+          en      : 'spain',
+          league  : [{
+            name   : '西班牙甲级联赛',
+            number : 20
+          }, {
+            name   : '西班牙乙级联赛',
+            number : 3
+          }]
+        }
+      }, {
+        title : '德国',
+        act     : false,
+        subData : {
+          en      : 'germany',
+          league  : [{
+            name   : '德国甲级联赛',
+            number : 20
+          }, {
+            name   : '德国乙级联赛',
+            number : 3
+          }]
+        }
+      }, {
+        title : '意大利',
+        act     : false,
+        subData : {
+          en      : 'italy',
+          league  : [{
+            name   : '意大利甲级联赛',
+            number : 20
+          }, {
+            name   : '意大利乙级联赛',
+            number : 3
+          }]
+        }
+      }, {
+        title : '法国',
+        act     : false,
+        subData : {
+          en      : 'france',
+          league  : [{
+            name   : '法国甲级联赛',
+            number : 20
+          }, {
+            name   : '法国乙级联赛',
+            number : 3
+          }]
+        }
+      }, {
+        title : '日本',
+        act     : false,
+        subData : {
+          en      : 'japan',
+          league  : [{
+            name   : '日本甲级联赛',
+            number : 20
+          }, {
+            name   : '日本乙级联赛',
+            number : 3
+          }]
+        }
+      }, {
+        title : '巴西',
+        act     : false,
+        subData : {
+          en      : 'brazil',
+          league  : [{
+            name   : '巴西甲级联赛',
+            number : 20
+          }, {
+            name   : '巴西乙级联赛',
+            number : 3
+          }]
+        }
+      }],
+      component : {
+        path : 'event/league'
+      }
+    }) %>
+    </div>
+</div>

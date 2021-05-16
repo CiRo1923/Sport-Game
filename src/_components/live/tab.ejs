@@ -1,0 +1,20 @@
+<div class="tab Bgc(x26eb) D(fx)">
+  <div class="tabBd Fxg">
+    <div class="Is(n) Ta(c)">
+      <% for( let i = 0; i < tabs.length; i += 1 ) { -%>
+        <%
+          const { name, href, icon } = tabs[i];
+        -%>
+        <div class="Pos(r) D(ib) Col(4/12)">
+          <a href="<%- href %>" class="tabCtrl Py(8) D(ifx) Ai(c) C(xf:50) act:C(xf) Fi(xf:50) act:Fi(xf)<%- act === i ? ' act' : '' %>">
+            <%- require('../../_components/svg.ejs')({
+              className: 'WH(32) Mr(12,t) Mr(8,m)',
+              svgName: icon
+            }) %>
+            <b class="Fz(30)"><%- name %></b>
+          </a>
+        </div>
+      <% } -%>
+    </div>
+  </div>
+</div>

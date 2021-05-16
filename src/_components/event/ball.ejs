@@ -1,0 +1,51 @@
+<div class="ball Bgc(xf)">
+  <%
+    const balls = [{
+      icon   : 'star',
+      name   : '关注',
+      href   : 'event-favorite.html',
+      notice : 8
+    }, {
+      icon   : 'soccer',
+      name   : '足球',
+      href   : 'event-live.html',
+      notice : 245
+    }, {
+      icon   : 'basketball',
+      name   : '篮球',
+      href   : 'event-live.html',
+      notice : 187
+    }, {
+      icon   : 'tennis',
+      name   : '网球',
+      href   : 'event-live.html',
+      notice : 96
+    }, {
+      icon   : 'softball',
+      name   : '棒球',
+      href   : 'event-live.html',
+      notice : 18
+    }, {
+      icon   : 'table-tennis',
+      name   : '桌球',
+      href   : 'event-live.html',
+      notice : 100
+    }]
+  -%>
+  <ul class="ballBd D(fx) Px(10) Py(16)">
+    <% for(let i = 0; i < balls.length; i += 1) { -%>
+      <%
+        const { icon, name, href, notice } = balls[i];
+      -%>
+      <li class="Ta(c) Fx(0)">
+        <a href="<%- href %>" class="ballChannel D(b) C(x9abf) act:C(x26eb) Pos(r)<%- act === i ? ' act' : '' %>" notice="<%- notice %>">
+          <%- require('../../_components/svg.ejs')({
+            className: 'WH(40) Fi(x9abf) act:Fi(x26eb) Mb(4)',
+            svgName: icon
+          }) %>
+          <em class="D(b) Fz(24)"><%- name %></em>
+        </a>
+      </li>
+    <% } -%>
+  </ul>
+</div>

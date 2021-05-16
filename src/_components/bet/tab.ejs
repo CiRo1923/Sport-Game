@@ -1,0 +1,16 @@
+<div class="tab Bgc(x26eb) D(fx)">
+  <div class="tabBd Fxg">
+    <div class="Is(n) Ta(c)">
+      <% for( let i = 0; i < tabs.length; i += 1 ) { -%>
+        <%
+          const { name, href } = tabs[i];
+        -%>
+        <div class="Pos(r) D(ib) Col(3/12)">
+          <a href="<%- href %>" class="tabCtrl Py(8) D(b) C(xf:50) act:C(xf) $af.Bgc(xf)<%- act === i ? ' act' : '' %>">
+            <em class="Fz(30)"><%- name %></em>
+          </a>
+        </div>
+      <% } -%>
+    </div>
+  </div>
+</div>

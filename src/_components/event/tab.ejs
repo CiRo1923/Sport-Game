@@ -1,0 +1,24 @@
+<div class="tab Bgc(x26eb) D(fx)">
+  <div class="tabBd Fxg">
+    <div class="Is(n) Whs(now) Ov(hide) jTnsTab">
+      <% for( let i = 0; i < tabs.length; i += 1 ) { -%>
+        <%
+          const { name, href, notice } = tabs[i];
+        -%>
+        <div class="Ta(c) Pos(r) D(ib) Col(3/12)">
+          <a href="<%- href %>" class="tabCtrl Py(8) D(b) C(xf:50) act:C(xf) $bf.C(x26eb) $bf.Bgc(xf:50) $bf.act:Bgc(xf) $af.Bgc(xf)<%- act === i ? ' act' : '' %> jTnsTabItem" notice="<%- notice %>">
+            <em class="Fz(30)"><%- name %></em>
+          </a>
+        </div>
+      <% } -%>
+    </div>
+  </div>
+  <div class="tabTools Fxsh Bxz(bd) Bdlw(1) Bdst(sol) Bdlc(xf:20)">
+    <button type="button" class="tabCardCtrl D(fx) Ai(c) Jc(c) H(full) jAccCardLiveClose">
+      <%- require('../../_components/svg.ejs')({
+        className: 'WH(40) Fi(xf)',
+        svgName: 'chevron-double-top'
+      }) %>
+    </button>
+  </div>
+</div>

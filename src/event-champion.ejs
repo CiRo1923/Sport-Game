@@ -1,0 +1,178 @@
+<%
+    htmlWebpackPlugin.options.backURL = true;
+    htmlWebpackPlugin.options.refresh = true;
+    htmlWebpackPlugin.options.tools = true;
+-%>
+<%- require('_components/event/ball.ejs')({
+  act: 1
+}) %>
+<%- require('_components/event/tab.ejs')({
+  act: 3,
+  tabs: [{
+    name   : '滚球',
+    href   : 'event-live.html',
+    notice : 22
+  }, {
+    name   : '今日',
+    href   : 'event-today.html',
+    notice : 89
+  }, {
+    name   : '早盘',
+    href   : 'event-early-market.html',
+    notice : 125
+  }, {
+    name   : '冠军',
+    href   : 'event-champion.html',
+    notice : 28
+  }]
+}) %>
+<div class="Px(12,t) Mt(24,t) Px(8,m) Mt(16,m) in.Mt(20,t) in.Mt(12,m)">
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : false,
+    act         : true,
+    countryIcon : `${require('/assets/img/event/country/sky-sports-premier-league.png')}&webp`,
+    countryName : 'England Premier League',
+    notice      : null,
+    content     : {
+      component : {
+        path : 'event/compare',
+        data : [{
+          name: 'Manchester City',
+          compare: 38.58
+        }, {
+          name: 'Leicester City',
+          compare: 53.63
+        }, {
+          name: 'Manchester United',
+          compare: 18.99
+        }, {
+          name: 'West Ham',
+          compare: 67.59
+        }, {
+          name: 'Liverpool',
+          compare: 10.42
+        }, {
+          name: 'Newcastle',
+          compare: 68.36
+        }, {
+          name: 'Chelsea',
+          compare: 53.92
+        }, {
+          name: 'Southampton',
+          compare: 68.73
+        }]
+      }
+    }
+  }) %>
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : false,
+    act         : false,
+    countryIcon : `${require('/assets/img/event/country/bundesliga.png')}&webp`,
+    countryName : 'Germany Bundesliga',
+    notice      : null,
+    content     : {
+      component : {
+        path : 'event/compare',
+        data : [{
+          name: 'Manchester City',
+          compare: 38.58
+        }, {
+          name: 'Leicester City',
+          compare: 53.63
+        }, {
+          name: 'Manchester United',
+          compare: 18.99
+        }, {
+          name: 'West Ham',
+          compare: 67.59
+        }, {
+          name: 'Liverpool',
+          compare: 10.42
+        }, {
+          name: 'Newcastle',
+          compare: 68.36
+        }, {
+          name: 'Chelsea',
+          compare: 53.92
+        }, {
+          name: 'Southampton',
+          compare: 68.73
+        }]
+      }
+    }
+  }) %>
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : false,
+    act         : false,
+    countryIcon : `${require('/assets/img/event/country/laliga.png')}&webp`,
+    countryName : 'Spain Primera Liga',
+    notice      : null,
+    content     : {
+      component : {
+        path : 'event/compare',
+        data : [{
+          name: 'Manchester City',
+          compare: 38.58
+        }, {
+          name: 'Leicester City',
+          compare: 53.63
+        }, {
+          name: 'Manchester United',
+          compare: 18.99
+        }, {
+          name: 'West Ham',
+          compare: 67.59
+        }, {
+          name: 'Liverpool',
+          compare: 10.42
+        }, {
+          name: 'Newcastle',
+          compare: 68.36
+        }, {
+          name: 'Chelsea',
+          compare: 53.92
+        }, {
+          name: 'Southampton',
+          compare: 68.73
+        }]
+      }
+    }
+  }) %>
+  <%- require('_components/mAccCord.ejs')({
+    isLive      : false,
+    act         : false,
+    countryIcon : `${require('/assets/img/event/country/champions.png')}&webp`,
+    countryName : 'UEFA Champions League',
+    notice      : null,
+    content     : {
+      component : {
+        path : 'event/compare',
+        data : [{
+          name: 'Manchester City',
+          compare: 38.58
+        }, {
+          name: 'Leicester City',
+          compare: 53.63
+        }, {
+          name: 'Manchester United',
+          compare: 18.99
+        }, {
+          name: 'West Ham',
+          compare: 67.59
+        }, {
+          name: 'Liverpool',
+          compare: 10.42
+        }, {
+          name: 'Newcastle',
+          compare: 68.36
+        }, {
+          name: 'Chelsea',
+          compare: 53.92
+        }, {
+          name: 'Southampton',
+          compare: 68.73
+        }]
+      }
+    }
+  }) %>
+</div>

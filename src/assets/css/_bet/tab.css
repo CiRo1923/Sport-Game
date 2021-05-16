@@ -1,0 +1,29 @@
+.tabCtrl {
+  &.act {
+    &::after {
+      content: "";
+      left: 50%;
+      bottom: 0;
+      width: 50%;
+      pointer-events: none;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@mixin T {
+  .tabCtrl {
+    &::after {
+      height: vmt(3px);
+    }
+  }
+}
+
+@mixin M {
+  .tabCtrl {
+    &::after {
+      height: vmm(2px);
+    }
+  }
+}

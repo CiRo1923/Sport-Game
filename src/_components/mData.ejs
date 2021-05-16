@@ -1,0 +1,23 @@
+<%
+  const tag = typeof type !== 'undefined' ? type : 'div';
+  const typeVal = typeof type !== 'undefined' && type === 'button' ? ' type="button"' : '';
+-%>
+<% if ( typeof data === 'undefined' || ! data || data.value !== 'lock' ) { -%>
+  <<%- tag %><%- typeVal %> class="W(full) D(b) Bxz(bd)<%- typeof title.className !== 'undefined' ? ` ${title.className}` : '' %>">
+    <div class="M(3,t) M(2,m) P(8,t) P(5,m) Bgc(xfffa) act:Bgc(x26eb) Fz(24) Bdrs(3)">
+      <p class="C(x9abf) act:C(xf:70)"><%- title.value %></p>
+      <% if ( typeof component === 'undefined' || ! component ) { -%>
+        <p class="act:C(xf)"<%- typeof data.style !== 'undefined' && typeof data.style.fontSize !== 'undefined' ? ` ${data.style.fontSize}` : '' %>><em<%- typeof data.className !== 'undefined' ? ` class="${data.className}"` : '' %>><%- data.value %></em></p>
+      <% } else { -%>
+        <%- require(`../_components/${component.path}.ejs`)(component.data) %>
+      <% } -%>
+    </div>
+  </<%- tag %>>
+<% } else { -%>
+  <div class="M(3,t) M(2,m) Px(8,t) Py(24,t) Px(5,m) Py(16,m) Bgc(xfffa) Bdrs(3)">
+    <%- require('../_components/svg.ejs')({
+      className: 'WH(32) Fi(x9abf)',
+      svgName: 'lock'
+    }) %>
+  </div>
+<% } -%>

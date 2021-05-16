@@ -1,0 +1,130 @@
+<div class="card P(12,t) P(8,m) Bxz(bd) in.Mt(12,t) in.Mt(8,m)">
+  <div class="cardGp Bgc(xf) Bdrs(6) Ta(c)">
+    <div class="cardGpHd Py(6,t) Py(4,m) Bdbw(1) Bdbc(xfffa) Bdst(sol)">
+      <b class="Fz(26)">1X2</b>
+    </div>
+    <ul class="cardGpBd D(fx) Ai(c) Px(12,t) Py(12,t) Px(9,m) Py(8,m)">
+      <% for(let i = 0; i < score.length; i += 1) { -%>
+        <%
+          const { title, value } = score[i]
+        -%>
+      <li class="Col(4/12)">
+        <%- require('../../_components/mData.ejs')({
+          type: 'button',
+          title: {
+            className: 'jDataCtrl',
+            value : title
+          },
+          data: {
+            className: 'Fz(30)',
+            value: value
+          }
+        }) %>
+      </li>
+      <% } -%>
+    </ul>
+  </div>
+  <div class="cardGp Bgc(xf) Bdrs(6) Ta(c)">
+    <div class="cardGpHd Py(6,t) Py(4,m) Bdbw(1) Bdbc(xfffa) Bdst(sol)">
+      <b class="Fz(26)">Handicap</b>
+    </div>
+    <ul class="cardGpBd Px(12,t) Py(12,t) Px(9,m) Py(8,m)">
+      <% for(let i = 0; i < handicap.length; i += 1) { -%>
+        <li class="D(fx) Ai(c) W(full)">
+          <span class="D(b) Mr(16,t) Mr(12,m) Fxsh"><%- i === 0 ? 'H' : 'A' %></span>
+          <ul class="D(fx) Ai(c) Fxg">
+            <% for(let j = 0; j < handicap[i].length; j += 1) { -%>
+              <%
+                const { title, value } = handicap[i][j];
+              -%>
+              <li class="Col(4/12)">
+                <%- require('../../_components/mData.ejs')({
+                  type: 'button',
+                  title: {
+                    className: 'jDataCtrl',
+                    value : title
+                  },
+                  data: ((i === 0 && j === 0) || (i === 1 && j === 0))
+                  ? null
+                  : {
+                    className: 'Fz(30)',
+                    value: value
+                  },
+                  component: ((i === 0 && j === 0) || (i === 1 && j === 0))
+                  ? {
+                    path: 'mStock',
+                    data: {
+                      style : {
+                        fontSize: 'Fz(30)'
+                      },
+                      stock: (i === 0 && j === 0) ? 'Down' : (i === 1 && j === 0) ? 'UP' : '',
+                      value: value
+                    }
+                  }
+                  : null
+                }) %>
+              </li>
+            <% } -%>
+          </ul>
+        </li>
+      <% } -%>
+    </ul>
+  </div>
+  <div class="cardGp Bgc(xf) Bdrs(6) Ta(c)">
+    <div class="cardGpHd Py(6,t) Py(4,m) Bdbw(1) Bdbc(xfffa) Bdst(sol)">
+      <b class="Fz(26)">Over / Under</b>
+    </div>
+    <ul class="cardGpBd Px(12,t) Py(12,t) Px(9,m) Py(8,m)">
+      <% for(let i = 0; i < OU.length; i += 1) { -%>
+        <li class="D(fx) Ai(c) W(full)">
+          <span class="D(b) Mr(16,t) Mr(12,m) Fxsh"><%- i === 0 ? 'O' : 'U' %></span>
+          <ul class="D(fx) Ai(c) Fxg">
+            <% for(let j = 0; j < OU[i].length; j += 1) { -%>
+              <%
+                const { title, value } = OU[i][j];
+              -%>
+              <li class="Col(4/12)">
+                <%- require('../../_components/mData.ejs')({
+                  type: 'button',
+                  title: {
+                    className: 'jDataCtrl',
+                    value : title
+                  },
+                  data: {
+                    className: 'Fz(30)',
+                    value: value
+                  }
+                }) %>
+              </li>
+            <% } -%>
+          </ul>
+        </li>
+      <% } -%>
+    </ul>
+  </div>
+  <div class="cardGp Bgc(xf) Bdrs(6) Ta(c)">
+    <div class="cardGpHd Py(6,t) Py(4,m) Bdbw(1) Bdbc(xfffa) Bdst(sol)">
+      <b class="Fz(26)">Odd / Even</b>
+    </div>
+    <ul class="cardGpBd D(fx) Ai(c) Px(12,t) Py(12,t) Px(9,m) Py(8,m)">
+      <% for(let i = 0; i < OE.length; i += 1) { -%>
+        <%
+          const { title, value } = OE[i]
+        -%>
+      <li class="Col(6/12)">
+        <%- require('../../_components/mData.ejs')({
+          type: 'button',
+          title: {
+            className: 'jDataCtrl',
+            value : title
+          },
+          data: {
+            className: 'Fz(30)',
+            value: value
+          }
+        }) %>
+      </li>
+      <% } -%>
+    </ul>
+  </div>
+</div>

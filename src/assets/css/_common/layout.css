@@ -1,0 +1,38 @@
+.lHd,
+.lToolBar {
+  z-index: 5;
+}
+
+.lHd {
+  top: 0;
+  left: 0;
+}
+
+.lToolBar {
+  bottom: 0;
+  left: 0;
+}
+
+@mixin T {
+  .lM {
+    &:not(:first-child) {
+      padding-top: vmt(var(--tablet-header-height));
+    }
+
+    &:not(:last-child) {
+      padding-bottom: vmt((var(--tablet-tabbar-height) + 28px));
+    }
+  }
+}
+
+@mixin M {
+  .lM {
+    &:not(:first-child) {
+      padding-top: vmm(var(--mobile-header-height));
+    }
+
+    &:not(:last-child) {
+      padding-bottom: vmm((var(--mobile-tabbar-height) + 28px));
+    }
+  }
+}

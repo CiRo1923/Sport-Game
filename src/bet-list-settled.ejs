@@ -1,0 +1,196 @@
+<%
+    htmlWebpackPlugin.options.backURL = null;
+    htmlWebpackPlugin.options.refresh = true;
+    htmlWebpackPlugin.options.tools = true;
+-%>
+-%>
+<%- require('_components/bet/tab.ejs')({
+  act: 1,
+  tabs: [{
+    name : '未结算注单',
+    href : 'bet-list-running.html'
+  }, {
+    name : '已结算注单',
+    href : 'bet-list-settled.html'
+  }]
+}) %>
+<div class="Px(12,t) Mt(24,t) Px(8,m) Mt(16,m) in.Mt(20,t) in.Mt(12,m)">
+  <p class="Fz(26) C(x7799)"><b>查看未结算 2021-05-10</b></p>
+  <%- require('_components/bet/card.ejs')({
+    tag        : 'Won',
+    tagBgColor : 'Bgc(x0d9a)',
+    reload     : false,
+    data       : [{
+      kind       : 'Handicap - Bashundhara Kings  0.00',
+      odds       : null,
+      tag        : null,
+      tagBgColor : null,
+      name       : 'Bashundhara Kings -vs- Muktijoddha SKC',
+      team       : 'Bangladesh Premier League',
+      date       : '2021/02/22',
+      isLive     : true,
+      score      : '[1:0] [1:3]',
+      scoreColor : null
+    }],
+    footer : [{
+      title: '赔率',
+      value: '1.78 (E)'
+    }, {
+      title: '投注金额',
+      value: '100.00 (100.00)'
+    }, {
+      title: '赢/输',
+      value: '178.00 (0.00)',
+      color: 'C(x0d9a)'
+    }]
+  }) %>
+  <%- require('_components/bet/card.ejs')({
+    tag        : 'Draw',
+    tagBgColor : 'Bgc(x9abf)',
+    reload     : false,
+    data       : [{
+      kind       : 'Over/Under - Over 1.75',
+      odds       : '@1.78(E)',
+      tag        : 'Win',
+      tagBgColor : 'Bgc(x0d9a)',
+      name       : 'Manchester City -vs- Aston Villa',
+      team       : 'England. Premier League',
+      date       : '2021/02/22',
+      isLive     : true,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }, {
+      kind       : 'Handicap - Boavista U23  0.00',
+      odds       : '@1.52(E)',
+      tag        : 'Win',
+      tagBgColor : 'Bgc(x0d9a)',
+      name       : 'Boavista U23 -vs- Vitoria Guimaraes U23',
+      team       : 'Portugal Liga Revelacao U23 Playoff',
+      date       : '2021/02/22',
+      isLive     : true,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }, {
+      kind       : 'Double Chance - 12',
+      odds       : '@1.52(E)',
+      tag        : 'Draw',
+      tagBgColor : 'Bgc(x9abf)',
+      name       : 'Queretaro -vs- Pumas U.N.A.M.',
+      team       : 'Mexico Primera Division',
+      date       : '2021/02/22',
+      isLive     : false,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }, {
+      kind       : '1X2 & O/U - Athletic Bilbao & Over',
+      odds       : '@3.60(E)',
+      tag        : 'Lose',
+      tagBgColor : 'Bgc(xf457)',
+      name       : 'Athletic Bilbao -vs- Getafe',
+      team       : 'SPAIN LA LIGA',
+      date       : '2021/02/22',
+      isLive     : false,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }],
+    footer : [{
+      title: '赔率',
+      value: '1.78 (E)'
+    }, {
+      title: '投注金额',
+      value: '100.00 (100.00)'
+    }, {
+      title: '赢/输',
+      value: '00.00 (0.00)',
+      color: 'C(x2342)'
+    }]
+  }) %>
+  <%- require('_components/bet/card.ejs')({
+    tag        : 'Draw',
+    tagBgColor : 'Bgc(x7cff)',
+    reload     : '[1:0] [1:3]',
+    data       : [{
+      kind       : 'Over/Under - Over 1.75',
+      odds       : '@1.78(E)',
+      tag        : 'Win',
+      tagBgColor : 'Bgc(x0d9a)',
+      name       : 'Manchester City -vs- Aston Villa',
+      team       : 'England. Premier League',
+      date       : '2021/02/22',
+      isLive     : true,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }, {
+      kind       : 'Handicap - Boavista U23  0.00',
+      odds       : '@1.52(E)',
+      tag        : 'Win',
+      tagBgColor : 'Bgc(x0d9a)',
+      name       : 'Boavista U23 -vs- Vitoria Guimaraes U23',
+      team       : 'Portugal Liga Revelacao U23 Playoff',
+      date       : '2021/02/22',
+      isLive     : true,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }, {
+      kind       : 'Double Chance - 12',
+      odds       : '@1.52(E)',
+      tag        : 'Lose',
+      tagBgColor : 'Bgc(x7cff)',
+      name       : 'Queretaro -vs- Pumas U.N.A.M.',
+      team       : 'Mexico Primera Division',
+      date       : '2021/02/22',
+      isLive     : false,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }, {
+      kind       : '1X2 & O/U - Athletic Bilbao & Over',
+      odds       : '@3.60(E)',
+      tag        : 'Lose',
+      tagBgColor : 'Bgc(xf457)',
+      name       : 'Athletic Bilbao -vs- Getafe',
+      team       : 'SPAIN LA LIGA',
+      date       : '2021/02/22',
+      isLive     : false,
+      score      : '[1:0] [1:3]',
+      scoreColor : 'C(x9abf)'
+    }],
+    footer : [{
+      title: '赔率',
+      value: '1.78 (E)'
+    }, {
+      title: '投注金额',
+      value: '100.00 (100.00)'
+    }, {
+      title: '赢/输',
+      value: '00.00 (0.00)',
+      color: 'C(x2342)'
+    }]
+  }) %>
+  <%- require('_components/bet/card.ejs')({
+    tag        : 'Won',
+    tagBgColor : 'Bgc(x7cff)',
+    reload     : true,
+    data       : [{
+      kind       : 'Handicap - Bashundhara Kings  0.00',
+      tag        : null,
+      tagBgColor : null,
+      name       : 'Bashundhara Kings -vs- Muktijoddha SKC',
+      team       : 'Bangladesh Premier League',
+      date       : '2021/02/22',
+      isLive     : true,
+      score      : '[1:0] [1:3]',
+      scoreColor : null
+    }],
+    footer : [{
+      title: '赔率',
+      value: '1.78 (E)'
+    }, {
+      title: '投注金额',
+      value: '100.00 (100.00)'
+    }, {
+      title: '赢/输',
+      value: '178.00 (0.00)',
+      color: 'C(x0d9a)'
+    }]
+  }) %>
+</div>

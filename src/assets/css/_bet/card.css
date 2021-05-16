@@ -1,0 +1,51 @@
+.card {
+  box-shadow: 0 1px 8px 0 rgba(#000, 0.1);
+}
+
+.cardBd {
+  transition: max-height var(--anim-time);
+}
+
+.cardBdCtrl {
+  &::before,
+  &::after {
+    content: "";
+    top: 0;
+    left: 50%;
+    height: 1px;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    width: 100%;
+    background-image: linear-gradient(90deg, #b6bed1, #b6bed1 50%, transparent 50%, transparent 100%);
+    background-size: 8px 1px;
+  }
+
+  &::after {
+    background-color: #b6bed1;
+    transition: width var(--anim-time);
+  }
+
+  &.act {
+    max-height: 1px;
+
+    &::after {
+      width: 0;
+    }
+  }
+
+  &:not(.act) {
+    max-height: 100px;
+
+    & ~ .cardBd {
+      max-height: 0;
+    }
+
+    &::after {
+      width: 100%;
+    }
+  }
+}

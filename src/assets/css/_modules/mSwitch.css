@@ -1,0 +1,86 @@
+.mSwitchCtrl {
+  &::before,
+  &::after {
+    content: "";
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: background-color var(--anim-time);
+  }
+
+  &::before {
+    border-radius: 20px;
+  }
+
+  &::after {
+    left: 0;
+    border-radius: 50%;
+    transition: left var(--anim-time);
+  }
+}
+
+.mSwitch {
+  [type="checkbox"] {
+    left: -99999px;
+  }
+}
+
+@mixin T {
+  .mSwitchCtrl {
+    width: vmt(60px);
+    height: vmt(25px);
+
+    &::before {
+      left: vmt(14px);
+      width: calc(100% - vmt(14px * 2));
+      height: vmt(15px);
+    }
+
+    &::after {
+      width: vmt(25px);
+      height: vmt(25px);
+    }
+  }
+
+  .mSwitch {
+    [type="checkbox"] {
+      &:checked {
+        & + .mSwitchCtrl {
+          &::after {
+            left: calc(100% - vmt(25px));
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin M {
+  .mSwitchCtrl {
+    width: vmm(40px);
+    height: vmm(18px);
+
+    &::before {
+      left: vmm(9px);
+      width: calc(100% - vmm(9px * 2));
+      height: vmm(10px);
+    }
+
+    &::after {
+      width: vmm(18px);
+      height: vmm(18px);
+    }
+  }
+
+  .mSwitch {
+    [type="checkbox"] {
+      &:checked {
+        & + .mSwitchCtrl {
+          &::after {
+            left: calc(100% - vmm(18px));
+          }
+        }
+      }
+    }
+  }
+}

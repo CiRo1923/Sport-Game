@@ -1,0 +1,17 @@
+.mBtn {
+  box-shadow: 0 1px 8px 0 rgba(#000, 0.1);
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+@mixin T {
+  .mBtn {
+    height: vmt(45px);
+  }
+}
+
+@mixin M {
+  .mBtn {
+    height: vmm(30px);
+  }
+}

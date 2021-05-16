@@ -1,0 +1,24 @@
+
+  <% for (let i = 0; i < league.length; i += 1) { -%>
+    <% const { list, isLive, value } = league[i]; -%>
+    <ul class="Py(12,t) Py(9,m) odd:Bgc(xf) even:Bgc(xfffa)">
+      <% for (let j = 0; j < list.length; j += 1) { -%>
+        <% const { name, number } = list[j]; -%>
+        <li>
+          <!-- 選到的聯賽新增 className act； url 後的參數可自行替換 -->
+          <a href="live-score.html?country=<%- en %>&idx=<%- (i + 1) %>&league=<%- (j + 1) %>" class="D(fx) Ai(c) Px(24,t) Px(16,m) Py(4,t) Py(3,m) act:Bgc(x26eb) act:C(xf) Fz(26)">
+            <em class="D(b) Fxg"><%- name %></em>
+            <% if ( number !== null ) { -%>
+              <b class="D(b) Fxsh"><%- number %></b>
+            <% } -%>
+          </a>
+        </li>
+      <% } -%>
+      <li class="Px(24,t) Px(16,m) Py(4,t) Py(3,m) D(fx) Ai(c) C(x9abf) Fz(24)">
+        <% if ( isLive ) { -%>
+          <em class="D(b)<%- isLive === true ? ' C(xf457)' : '' %> Mr(12,t) Mr(8,m)"><%- isLive === true ? 'LIVE' : 'Today' %></em>
+        <% } -%>
+        <small class="D(b)"><%- value %></small>
+      </li>
+    </ul>
+  <% } -%>

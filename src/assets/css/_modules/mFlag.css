@@ -1,0 +1,40 @@
+.mFlag {
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    top: 50%;
+    right: 0;
+    width: 200%;
+    height: 100%;
+    border-radius: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-50%) skewX(-30deg);
+  }
+}
+
+@mixin T {
+  .mFlag {
+    padding: vmt(3px) vmt(20px) vmt(3px) vmt(8px);
+
+    &::before {
+      margin-right: vmt(8px);
+      border-top-right-radius: vmt(5px);
+    }
+  }
+}
+
+@mixin M {
+  .mFlag {
+    padding: vmm(2px) vmm(14px) vmm(2px) vmm(5px);
+
+    &::before {
+      margin-right: vmm(5px);
+      border-top-right-radius: vmm(3px);
+    }
+  }
+}

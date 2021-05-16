@@ -1,0 +1,150 @@
+<div class="mTicketCnt --<%- type %>  jTicketCnt">
+  <ul class="D(fx) Ai(c) Jc(betw) Py(24,t) Py(16,m)">
+    <li>
+      <button type="button" class="D(fx) Fxd(row-r) Ai(c)">
+        <em class="C(x7799) Ml(3,t) Ml(2,m) D(b) Fz(24)">清除全部</em>
+        <%- require('_components/svg.ejs')({
+          className: 'WH(32) Fi(x7799)',
+          svgName: 'trash'
+        }) %>
+      </button>
+    </li>
+    <li>
+      <div class="D(fx) Ai(c)">
+        <small class="D(b) Mr(6,t) Mr(4,m) Fz(24)">接受任何赔率</small>
+        <div class="mSwitch">
+          <label class="D(b)">
+            <input type="checkbox" class="Pos(a)">
+            <span class="mSwitchCtrl Pos(r) D(b) $bf.Bgc(x7799:50) $af.Bgc(x9abf) $bf.checked:Bgc(x26eb:50) $af.checked:Bgc(x26eb)"></span>
+          </label>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <ul class="in.Mt(12,t) in.Mt(8,m)">
+    <% for(let i = 0; i < tickets.length; i += 1 ) { -%>
+      <%  const {isLive, leagueName, league, under, mark, input, fit, close} = tickets[i];  -%>
+      <li class="mTicketCardItem<%- fit ? ' --fit' : '' %><%- close ? ' --close' : '' %> Bgc(xf) Bdrs(6) Bxz(bd) P(24,t) P(16,m) Pos(r) Ov(hide) $bf.Bgc(x2342:70) $bf.C(xf) $af.Bgc(xf457)"<%- close ? ` close-msg="暂时关闭投注"` : '' %>>
+        <div class="D(fx) Ai(c) Jc(betw)">
+          <p class="D(fx) Ai(c)">
+            <%- require('_components/svg.ejs')({
+              className: 'WH(32)',
+              svgName: 'soccer'
+            }) %>
+            <% if ( isLive ) { -%>
+              <mark class="mTicketLive Fst(i) Fz(24) C(xf) Ml(6,t) Ml(4,m) D(b) Bgc(xf457) Bdrs(2)"><i class="D(b) Pl(3,t) Pr(6,t) Pl(2,m) Pr(4,m)">LIVE</i></mark>
+            <% } -%>
+            <em class="Fz(26) Ml(6,t) Ml(4,m) D(b)"><%- leagueName %></em>
+          </p>
+          <button type="button">
+            <%- require('_components/svg.ejs')({
+              className: 'WH(32) Fi(x7799)',
+              svgName: 'trash'
+            }) %>
+          </button>
+        </div>
+        <p class="Fz(26) C(x9abf) Mt(6,m) Mt(4,m)"><%- league %></p>
+        <div class="D(fx) Ai(c) Jc(betw) Mt(9,t) Mt(6,m)">
+          <p><b><%- under %></b></p>
+          <% if ( mark ) { -%>
+            <%- mark %>
+          <% } -%>
+        </div>
+        <% if ( input ) { -%>
+          <div class="D(fx) Jc(betw) Mt(20,t) Mt(14,m)">
+            <%- require('_components/mForm.ejs')({
+              className: {
+                frame: 'Col(7/12)'
+              },
+              type    : 'tel',
+              validate : `{'req': '请输入投注金额', 'min': {'val': 10, 'msg': '最低投注金额 $$min'}, 'max': {'val': 2000, 'msg': '最高投注金额 $$max'}}`,
+              placeholder : '投注金额'
+            }) %>
+            <p class="Fz(24) C(x9abf) Ta(r)">
+              <span class="D(b)">最低 - 最高 = 10 - 2,000</span>
+              <span class="D(b)">最高付款 = 0</span>
+            </p>
+          </div>
+        <% } -%>
+        <% if ( fit ) { -%>
+          <p class="C(xf457) Fz(26) Mt(9,t) Mt(6,m)">该项目不适用于串关投注</p>
+        <% } -%>
+      </li>
+    <% } -%>
+  </ul>
+  <div class="mTicketTool Bxz(bd) Pos(a) Bgc(xf) W(scr)">
+    <% if ( type === 'multiple' ) { -%>
+      <div class="Px(16,t) Px(12,m) Py(24,t) Py(16,m) D(fx) Ai(c) Jc(betw) Bdbw(1) Bdst(sol) Bdbc(xfff7)">
+        <div>
+          <%- require('_components/mForm.ejs')({
+            type : 'checkbox',
+            id: 'More',
+            text: '3 场任 3 场胜 (共 1 个注单)'
+          }) %>
+          <div class="Mt(14,t) Mt(10,m)">
+            <button type="button" class="D(fx) Ai(c) jTicketMore" disabled>
+              <em class="disabled:C(x9abf) C(x26eb) D(b) Fz(26) Mr(6,t) Mr(4,m)" :text="{'open': '收起选项', 'close': '更多串关类型'}">更多串关类型</em>
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32) disabled:Fi(x9abf) Fi(x26eb)',
+                svgName: 'arrow-down-less'
+              }) %>
+            </button>
+          </div>
+        </div>
+        <div class="Col(5/12) Ta(r)">
+          <%- require('_components/mForm.ejs')({
+            className: {
+              frame: 'Col(9/12) D(ib)'
+            },
+            type    : 'tel',
+            validate : `{'req': '请输入投注金额', 'min': {'val': 10, 'msg': '最低投注金额 $$min'}, 'max': {'val': 2000, 'msg': '最高投注金额 $$max'}}`,
+            placeholder : '投注金额'
+          }) %>
+          <p class="Fz(24) C(x9abf) Mt(4,t) Mt(3,m)">
+            <span class="D(b)">最低 - 最高 = 10 - 2,000</span>
+          </p>
+        </div>
+      </div>
+      <div class="mTicketMultipleList Ov(hide) jTicketMoreList">
+        <ul class="Px(16,t) Px(12,m) Py(24,t) Py(16,m)">
+          <li>
+            <%- require('_components/mForm.ejs')({
+              type : 'checkbox',
+              text: '3 场任 3 场胜 (共 1 个注单)'
+            }) %>
+          </li>
+          <li>
+            <%- require('_components/mForm.ejs')({
+              type : 'checkbox',
+              text: '5 场任 4 场胜 (共 5 个注单)'
+            }) %>
+          </li>
+        </ul>
+      </div>
+    <% } -%>
+    <div class="Px(16,t) Px(12,m) Py(24,t) Py(16,m)">
+      <ul class="in.Mt(8,t) in.Mt(5,m)">
+        <% if ( type === 'multiple' ) { -%>
+          <li class="D(fx) Ai(c) Jc(betw) Fz(30)">
+            <em>赔率</em>
+            <b>6.72</b>
+          </li>
+        <% } -%>
+        <li class="D(fx) Ai(c) Jc(betw) Fz(30)">
+          <em>投注金额</em>
+          <span>20.00</span>
+        </li>
+        <li class="D(fx) Ai(c) Jc(betw) Fz(30)">
+          <em>预测赢利</em>
+          <b class="C(x0d9a)">28.60</b>
+        </li>
+      </ul>
+      <div class="Mt(20,t) Mt(14,m) Px(16,t) Px(12,m)">
+        <!-- 加入 disabled 顯示無法點擊的樣式 -->
+        <button type="button" class="D(b) W(full) Bdrs(6) P(12,t) P(8,m) Bgc(x19ff) disabled:Bgc(xbbd1) C(xf) Fz(30) jSubmit" :fun="1" disabled>
+          <b>投注</b>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
