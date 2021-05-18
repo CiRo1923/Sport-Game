@@ -150,6 +150,28 @@
   }
 }
 
+.mTicketPopHd {
+  &::before,
+  &::after {
+    content: "";
+    bottom: 0;
+    background: url(~common/ticket-cut.png) no-repeat center center;
+    background-size: 100% auto;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  &::before {
+    left: 0;
+    transform: translateY(100%);
+  }
+
+  &::after {
+    right: 0;
+    transform: translateY(100%) scale(-1);
+  }
+}
+
 @mixin T {
   .mTicketHd {
     height: vmt(60px);
@@ -282,6 +304,14 @@
       &::after {
         width: vmm(4px);
       }
+    }
+  }
+
+  .mTicketPopHd {
+    &::before,
+    &::after {
+      width: vmm((width("common/ticket-cut.png") / 2));
+      height: vmm((height("common/ticket-cut.png") / 2));
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="mTicketCnt --single  jTicketCnt">
+<div class="mTicketCnt --single jTicketCnt">
   <%- require('_components/mTicketCnt.ejs')({
     type: 'single',
     tickets: [{
@@ -50,8 +50,17 @@
   }) %>
   <div class="mPop">
     <div class="mTicketPop">
-      <div class="mTicketPopHd"></div>
-      <div class="mTicketPopBd"></div>
+      <div class="mTicketPopStatus D(fx) Fxd(row-r) Ai(c) Bgc(x0d9a) Bdtrrs(8) Bdtlrs(8) Px(24,t) Py(14,t) Px(16,m) Py(10,m)">
+        <b class="D(b) C(xf) Fz(30) Fxg">您已投注完成！</b>
+        <%- require('_components/svg.ejs')({
+          className: 'WH(48) Fi(xf)',
+          svgName: 'check-o'
+        }) %>
+      </div>
+      <div class="mTicketPopHd Bgc(xf) Px(24,t) Pt(24,t) Pb(3,t) Px(16,m) Pt(16,m) Pb(2,m) Pos(r)">
+
+      </div>
+      <div class="mTicketPopBd Bgc(xf)"></div>
     </div>
   </div>
 </div>
