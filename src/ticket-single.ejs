@@ -1,49 +1,57 @@
-<%- require('_components/mTicketCnt.ejs')({
-  type: 'single',
-  tickets: [{
-    isLive: true,
-    leagueName: 'Manchester City v Aston Villa',
-    league: 'England. Premier League',
-    under: 'FT Over/Under - Under 1.5',
-    mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x9abf) Bdrs(2) Px(12,t) Px(8,m)"><b>1.68</b></mark>`,
-    input: true,
-    fit: null,
-    close: null
-  }, {
-    isLive: false,
-    leagueName: 'Osasuna v Sevilla',
-    league: 'England. Premier League',
-    under: 'FT Over/Under - Under 1.5',
-    mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x9abf) Bdrs(2) Px(12,t) Px(8,m)"><b></b>1.68</b></mark>`,
-    input: true,
-    fit: null,
-    close: null
-  }, {
-    isLive: false,
-    leagueName: 'Osasuna v Sevilla',
-    league: 'England. Premier League',
-    under: 'FT Over/Under - Under 1.5',
-    mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x0d9a) Bdrs(2) Px(12,t) Px(8,m)"><em>2.68 → 1.71</em></mark>`,
-    input: true,
-    fit: null,
-    close: null
-  }, {
-    isLive: false,
-    leagueName: 'Osasuna v Sevilla',
-    league: 'England. Premier League',
-    under: 'FT Over/Under - Under 1.5',
-    mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(xf457) Bdrs(2) Px(12,t) Px(8,m)"><em>2.68 → 1.71</em></mark>`,
-    input: true,
-    fit: null,
-    close: null
-  }, {
-    isLive: false,
-    leagueName: 'Osasuna v Sevilla',
-    league: 'England. Premier League',
-    under: 'FT Over/Under - Under 1.5',
-    mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x9abf) Bdrs(2) Px(12,t) Px(8,m)"><b>1.68</b></mark>`,
-    input: true,
-    fit: null,
-    close: true
-  }]
-}) %>
+<div class="mTicketCnt --single  jTicketCnt">
+  <%- require('_components/mTicketCnt.ejs')({
+    type: 'single',
+    tickets: [{
+      isLive: true,
+      leagueName: 'Manchester City v Aston Villa',
+      league: 'England. Premier League',
+      under: 'FT Over/Under - Under 1.5',
+      mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x9abf) Bdrs(2) Px(12,t) Px(8,m)"><b>1.68</b></mark>`,
+      input: true,
+      fit: null,
+      close: null
+    }, {
+      isLive: false,
+      leagueName: 'Osasuna v Sevilla',
+      league: 'England. Premier League',
+      under: 'FT Over/Under - Under 1.5',
+      mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x9abf) Bdrs(2) Px(12,t) Px(8,m)"><b></b>1.68</b></mark>`,
+      input: true,
+      fit: null,
+      close: null
+    }, {
+      isLive: false,
+      leagueName: 'Osasuna v Sevilla',
+      league: 'England. Premier League',
+      under: 'FT Over/Under - Under 1.5',
+      mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x0d9a) Bdrs(2) Px(12,t) Px(8,m)"><em>2.68 → 1.71</em></mark>`,
+      input: true,
+      fit: null,
+      close: null
+    }, {
+      isLive: false,
+      leagueName: 'Osasuna v Sevilla',
+      league: 'England. Premier League',
+      under: 'FT Over/Under - Under 1.5',
+      mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(xf457) Bdrs(2) Px(12,t) Px(8,m)"><em>2.68 → 1.71</em></mark>`,
+      input: true,
+      fit: null,
+      close: null
+    }, {
+      isLive: false,
+      leagueName: 'Osasuna v Sevilla',
+      league: 'England. Premier League',
+      under: 'FT Over/Under - Under 1.5',
+      mark : `<mark class="mTicketStock Fz(24) C(xf) D(fx) Ai(c) Bgc(x9abf) Bdrs(2) Px(12,t) Px(8,m)"><b>1.68</b></mark>`,
+      input: true,
+      fit: null,
+      close: true
+    }]
+  }) %>
+  <div class="mPop">
+    <div class="mTicketPop">
+      <div class="mTicketPopHd"></div>
+      <div class="mTicketPopBd"></div>
+    </div>
+  </div>
+</div>
