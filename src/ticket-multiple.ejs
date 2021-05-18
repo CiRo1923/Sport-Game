@@ -30,4 +30,74 @@
       close: null
     }]
   }) %>
+  <div class="mPop $bf.Bgc(x0:60) jPop jPopBet">
+    <div class="mPopBd mTicketPop Col(4/5) Pos(r)">
+      <div class="mTicketPopCnt Bdrs(8) Ov(hide)">
+        <div class="mTicketPopStatus D(fx) Fxd(row-r) Ai(c) Bgc(x0d9a) Px(24,t) Py(14,t) Px(16,m) Py(10,m)">
+          <b class="D(b) C(xf) Fz(30) Fxg Ml(12,t) Ml(8,m)">您已投注完成！</b>
+          <%- require('_components/svg.ejs')({
+            className: 'WH(48) Fi(xf)',
+            svgName: 'check-o'
+          }) %>
+        </div>
+        <div class="mTicketPopBd Bgc(xf) Pos(r) Px(24,t) Py(24,t) Px(16,m) Py(16,m) $bf.Bgc(xf)">
+          <%
+            const lists = [{
+              key: '注单数量',
+              value: '16',
+              className: 'C(x9abf)'
+            }, {
+              key: '投注金额',
+              value: '1290',
+              className: 'C(x9abf)'
+            }, {
+              key: '交易状态',
+              value: 'Running',
+              className: 'C(xf457)'
+            }, {
+              key: '预测赢利',
+              value: '6798.00',
+              className: 'C(xf457)'
+            }]
+          -%>
+          <ul class="in.Mt(8,t) in.Mt(5,m)">
+            <% for(let i = 0; i < lists.length; i += 1 ) { -%>
+              <% const { key, value, className } = lists[i]; -%>
+              <li class="D(fx) Ai(c) Jc(betw) Fz(30)">
+                <span class="D(b)"><%- key %></span>
+                <span class="D(b) <%- className %>"><%- value %></span>
+              </li>
+            <% } -%>
+          </ul>
+        </div>  
+      </div>
+      <div class="mTicketPopTools Mt(24,t) Mt(16,m)">
+        <button type="button" class="mTicketPopClose Bdrs(50%) Bdw(1) Bdst(sol) Bdc(xf) WH(80) D(fx) Ai(c) Jc(c) Fxd(col) Mx(auto) jPopClose">
+          <%- require('_components/svg.ejs')({
+            className: 'WH(48) Fi(xf)',
+            svgName: 'close'
+          }) %>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mPop $bf.Bgc(x0:60) jPop jPopError">
+    <div class="mPopBd Bgc(xf) Bdrs(8) Px(36,t) Pt(16,t) Pb(28,t) Px(24,m) Pt(12,m) Pb(20,m) Ta(c) Col(4/5) Pos(r)">
+      <div class="D(ifx) Fxd(col-r) Ta(c)">
+        <p class="Fz(30) Mb(16,t) Mb(12,m)"><b>账户资金不足</b></p>
+        <%- require('_components/svg.ejs')({
+          className: 'WH(128)',
+          svgName: 'close-o-c'
+        }) %>
+      </div>
+      <div class="Ta(l) Mt(12,t) Mt(8,m)">
+        <p class="Fz(26) C(x7799)">您没有足够的资金来下这些赌注，请立即存入资金以继续下注。</p>
+      </div>
+      <footer class="Mt(24,t) Mt(16,m)">
+        <button type="button" class="mPopClose Bgc(xfffa) Bdw(1) Bdst(sol) Bdc(xeef2) Bdrs(6) P(12,t) P(8,m) jPopClose">
+          <em class="Fz(30)">關閉</em>
+        </button>
+      </footer>
+    </div>
+  </div>
 </div>

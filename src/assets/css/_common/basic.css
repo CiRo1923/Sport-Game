@@ -5,9 +5,9 @@
   --desktop-tabbar-height: 0;
   --tablet-tabbar-height: 88px;
   --mobile-tabbar-height: 60px;
-  --desktop-imagesize: (48, 40, 32, 28);
-  --tablet-imagesize: (36, 30, 24, 20);
-  --mobile-imagesize: (24, 20, 16, 14);
+  --desktop-imagesize: (128, 80, 48, 40, 32, 28);
+  --tablet-imagesize: (96, 60, 36, 30, 24, 20);
+  --mobile-imagesize: (64, 40, 24, 20, 16, 14);
 
   /* --border-radius: (0); */
 }

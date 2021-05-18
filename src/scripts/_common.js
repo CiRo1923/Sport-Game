@@ -141,7 +141,23 @@ export const ticketCtrl = () => {
   });
 
   prjs.$d.on('click', '.jSubmit', e => {
-    alert(0);
+    const $this = j$(e.$this);
+    const $ticket = j$('.jTicket');
+    const $bet = j$('.jPopBet');
+    const $error = j$('.jPopError');
+    const popNumber = Number($this.attr(':fun'));
+
+    if (popNumber === 1) {
+      $ticket.removeClass('act');
+      $bet.addClass('act');
+    } else {
+      $error.addClass('act');
+    }
+  });
+
+  prjs.$d.on('click', '.jPopClose', () => {
+    const $pop = j$('.jPop');
+    $pop.removeClass('act');
   });
 };
 

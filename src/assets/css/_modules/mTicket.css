@@ -163,12 +163,34 @@
 
   &::before {
     left: 0;
-    transform: translateY(100%);
+    transform: translateY(97%);
   }
 
   &::after {
     right: 0;
-    transform: translateY(100%) scale(-1);
+    transform: translateY(97%) scale(-1);
+  }
+
+  & + .mTicketPopBd {
+    &::before,
+    &::after {
+      content: "";
+      top: 0;
+      left: 50%;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    &::before {
+      transform: translate(-50%, -97%);
+    }
+
+    &::after {
+      height: 1px;
+      background-image: linear-gradient(90deg, #b6bed1, #b6bed1 60%, transparent 60%, transparent 100%);
+      background-size: 10px 1px;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -312,6 +334,24 @@
     &::after {
       width: vmm((width("common/ticket-cut.png") / 2));
       height: vmm((height("common/ticket-cut.png") / 2));
+    }
+
+    & + .mTicketPopBd {
+      margin-top: vmm(height("common/ticket-cut.png") / 2 - 1);
+      padding-top: vmm(2px);
+
+      &::before,
+      &::after {
+        width: calc(100% - vmm(width("common/ticket-cut.png") - 2));
+      }
+
+      &::before {
+        height: vmm(height("common/ticket-cut.png") / 2 + 2);
+      }
+
+      &::after {
+        margin-top: vmm(height("common/ticket-cut.png") / -4 + 1);
+      }
     }
   }
 }
