@@ -1,3 +1,11 @@
+.mPopBd {
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--anim-time);
+}
+
 .mPop {
   top: 0;
   left: 0;
@@ -18,10 +26,6 @@
     z-index: -1;
   }
 
-  > * {
-
-  }
-
   &.act {
     width: 100%;
     height: 100%;
@@ -31,14 +35,6 @@
       opacity: 1;
     }
   }
-}
-
-.mPopBd {
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  transition: opacity var(--anim-time);
 }
 
 .mPopClose {

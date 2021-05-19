@@ -6,13 +6,6 @@
       <% if( isLive ) { -%>
         <small class="mFlag D(ib) $bf.Bgc(xf457) Ml(-12,t) Mr(12,t) Ml(-8,m) Mr(8,m) Fxsh"><b class="Fz(24) Fst(i) C(xf)">LIVE</b></small>
       <% } -%>
-      <%- require('../_components/img.ejs')({
-        className: {
-          figure: 'W(40) Fxsh Mr(6,t) Mr(4,m)'
-        },
-        path: countryIcon,
-        alt: countryName
-      }) %>
       <p class="Fz(26) Fxg"><b><%- countryName %></b></p>
     </div>
     <%- require('../_components/svg.ejs')({

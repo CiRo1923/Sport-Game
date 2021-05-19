@@ -8,7 +8,75 @@
     href : 'live-league.html'
   }) %>
   <div class="mediaBd">
-
+    <div class="data Pt(16,t) Pb(60,t) Pt(12,m) Pb(44,m) Ta(c)">
+      <mark class="dataTag Fst(i) C(xf) Fz(12) D(ib) Pos(r) Pr(9,t) Pl(3,t) Pr(6,m) Pl(2,m)"><b class="D(b)">LIVE</b></mark>
+      <ul class="My(24,t) My(16,m) D(fx) Ai(c)">
+        <li class="Col(4/12)">
+          <b class="Fz(30) C(xf457) Px(16,t) Px(12,m) Bxz(bd)">West Ham</b>
+        </li>
+        <li class="Col(4/12)">
+          <b class="Fz(50) C(xf) Px(16,t) Px(12,m) Bxz(bd)">2 : 1</b>
+        </li>
+        <li class="Col(4/12)">
+          <b class="Fz(30) C(xf) Px(16,t) Px(12,m) Bxz(bd)">Liverpool</b>
+        </li>
+      </ul>
+      <ul class="D(fx) T(c)">
+        <li class="Col(4/12)">
+          <ul class="D(ifx) Ai(c)">
+            <li>
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32)',
+                svgName: 'corner-c'
+              }) %>
+              <p class="C(xf) Fz(26)">3</p>
+            </li>
+            <li class="Mx(12,t) Mx(8,m)">
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32) Fi(xf457)',
+                svgName: 'cards'
+              }) %>
+              <p class="C(xf) Fz(26)">0</p>
+            </li>
+            <li>
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32) Fi(xfc66)',
+                svgName: 'cards'
+              }) %>
+              <p class="C(xf) Fz(26)">1</p>
+            </li>
+          </ul>
+        </li>
+        <li class="Col(4/12)">
+          <p class="C(xf) Fz(26)">2 Half 45:30</p>
+        </li>
+        <li class="Col(4/12)">
+          <ul class="D(ifx) Ai(c)">
+            <li>
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32) Fi(xfc66)',
+                svgName: 'cards'
+              }) %>
+              <p class="C(xf) Fz(26)">2</p>
+            </li>
+            <li class="Mx(12,t) Mx(8,m)">
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32) Fi(xf457)',
+                svgName: 'cards'
+              }) %>
+              <p class="C(xf) Fz(26)">0</p>
+            </li>
+            <li>
+              <%- require('_components/svg.ejs')({
+                className: 'WH(32)',
+                svgName: 'corner-c'
+              }) %>
+              <p class="C(xf) Fz(26)">1</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 <%- require('_components/live/tab.ejs')({

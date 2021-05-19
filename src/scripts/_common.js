@@ -97,21 +97,26 @@ export const ticketCtrl = () => {
   prjs.$d.on('change', '.jFormCheckBoxMore', e => {
     const $this = j$(e.$this);
     const $ticketMore = j$('.jTicketMore');
-    const ticketMoreSet = JSON.parse(j$('.jTicketMore').children().attr(':text').replace(/'/g, '"'));
+    const $ticketMoreEm = j$('.jTicketMoreEm');
+    const ticketMoreSet = JSON.parse($ticketMoreEm.attr(':text').replace(/'/g, '"'));
+    const $moreList = j$('.jTicketMoreList');
 
     if ($this.prop('checked')) {
       $ticketMore.prop('disabled', false);
     } else {
       $ticketMore.prop('disabled', true);
       $ticketMore.removeClass('act');
-      $ticketMore.children().text(ticketMoreSet.close);
+      $moreList.removeClass('act');
+      $moreList[0][0].style.maxHeight = 0;
+      $ticketMoreEm.text(ticketMoreSet.close);
     }
   });
 
   // 更多串关类型
   prjs.$d.on('click', '.jTicketMore', e => {
     const $this = j$(e.$this);
-    const moreSet = JSON.parse($this.children().attr(':text').replace(/'/g, '"'));
+    const $ticketMoreEm = j$('.jTicketMoreEm');
+    const moreSet = JSON.parse($ticketMoreEm.attr(':text').replace(/'/g, '"'));
     const $moreList = j$('.jTicketMoreList');
 
     if (!$this.prop('disabled')) {
@@ -119,10 +124,10 @@ export const ticketCtrl = () => {
       $moreList.toggleClass('act');
 
       if ($this.hasClass('act')) {
-        $this.children().text(moreSet.open);
+        $ticketMoreEm.text(moreSet.open);
         $moreList[0][0].style.maxHeight = `${$moreList.children().height()}px`;
       } else {
-        $this.children().text(moreSet.close);
+        $ticketMoreEm.text(moreSet.close);
         $moreList[0][0].style.maxHeight = 0;
       }
     }

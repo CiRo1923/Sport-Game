@@ -5,7 +5,7 @@
       <div class="gameGpHd">
         <ul class="gameGpTr">
           <li class="gameGpTh Col(5/11) Pl(3,t) Pb(9,t) Pr(14,t) Pl(2,m) Pb(6,m) Pr(10,m)">
-            <p><%- info %></p>
+            <p class="C(x9abf) Fz(24)"><%- info %></p>
           </li>
           <li class="gameGpTh Col(2/11) Px(3,t) Pb(9,t) Px(2,m) Pb(6,m) Ta(c)">
             <em class="C(x9abf) Fz(24)">1X2</em>
@@ -25,14 +25,7 @@
             <li class="gameGpTh Pr(14,t) Pr(10,m)">
               <a href="javascript:;" class="D(fx) Ai(c)">
                 <div class="D(fx) Fxd(row-r) Ai(c) Jc(e) Col(11/12) Ov(hide)">
-                  <em class="Fz(30) Ml(12,t) Ml(8,m)<%- strong ? ' C(xf457)' : '' %> Tov(...)"><%- name %></em>
-                  <%- require('../../_components/img.ejs')({
-                    className: {
-                      figure: 'W(40) Fxsh'
-                    },
-                    path: icon,
-                    alt: name
-                  }) %>
+                  <em class="Fz(30) Ml(12,t)<%- strong ? ' C(xf457)' : '' %> Tov(...)"><%- name %></em>
                 </div>
                 <b class="Col(1/12) Ml(12,t) Ml(8,m) D(b)"><%- score %></b>
               </a>

@@ -110,7 +110,7 @@
 
 .mTicketLive {
   > i {
-    transform: scale(0.9);
+    transform: scale(0.75);
   }
 }
 
@@ -194,6 +194,20 @@
   }
 }
 
+.mTicketMore {
+  > svg {
+    transform-origin: center center;
+    transform: rotate(0deg);
+    transition: transform var(--anim-time);
+  }
+
+  &.act {
+    > svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 @mixin T {
   .mTicketHd {
     height: vmt(60px);
@@ -215,11 +229,11 @@
 
   .mTicketCnt {
     &.--single {
-      padding-bottom: vmt(190px);
+      padding-bottom: vmt(220px);
     }
 
     &.--multiple {
-      padding-bottom: vmt(360px);
+      padding-bottom: vmt(390px);
     }
   }
 
@@ -257,6 +271,32 @@
     &.--fit {
       &::after {
         width: vmt(6px);
+      }
+    }
+  }
+
+  .mTicketPopHd {
+    &::before,
+    &::after {
+      width: vmt((width("common/ticket-cut.png") * 0.75));
+      height: vmt((height("common/ticket-cut.png") * 0.75));
+    }
+
+    & + .mTicketPopBd {
+      margin-top: vmt(height("common/ticket-cut.png") * 0.75 - 1);
+      padding-top: vmt(2px);
+
+      &::before,
+      &::after {
+        width: calc(100% - vmt(width("common/ticket-cut.png") * 1.5 - 2));
+      }
+
+      &::before {
+        height: vmt(height("common/ticket-cut.png") * 0.75 + 2);
+      }
+
+      &::after {
+        margin-top: vmt(height("common/ticket-cut.png") * 0.75 / -2 + 1);
       }
     }
   }

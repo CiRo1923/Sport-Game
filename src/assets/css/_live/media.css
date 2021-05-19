@@ -1,3 +1,23 @@
+.media {
+  width: 100vw;
+  background: url('~live/live-bg.png') no-repeat center top;
+  background-size: 100% auto;
+}
+
+.mediaHdMenuCtrl {
+  &::after {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-style: solid;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position: relative;
+  }
+}
+
 .mediaHdIcon {
   top: 50%;
   transform: translateY(-50%);
@@ -6,6 +26,10 @@
 @mixin T {
   .mediaHdMenuCtrl {
     height: vmt(var(--tablet-header-height));
+
+    &::after {
+      border-width: 8px 8px 0 8px;
+    }
   }
 
   .mediaHdIcon {
@@ -16,6 +40,10 @@
 @mixin M {
   .mediaHdMenuCtrl {
     height: vmm(var(--mobile-header-height));
+
+    &::after {
+      border-width: 5px 5px 0 5px;
+    }
   }
 
   .mediaHdIcon {

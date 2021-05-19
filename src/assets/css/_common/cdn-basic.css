@@ -1898,7 +1898,7 @@
     }
   }
 
-  @for $i from 20 to 60 by 4 {
+  @for $i from 20 to 100 by 4 {
     .M\(-$(i)\), .M\(-$(i)\,p\), .M\(-$(i)\,pt\) {
       margin: -$(i)px;
     }
@@ -2372,7 +2372,7 @@
     }
   }
 
-  @for $i from 20 to 60 by 4 {
+  @for $i from 20 to 100 by 4 {
     .M\(-$(i)\), .M\(-$(i)\,pt\), .M\(-$(i)\,p\) {
       margin: vmp(-$(i) px);
     }
@@ -2724,7 +2724,7 @@
     }
   }
 
-  @for $i from 20 to 60 by 4 {
+  @for $i from 20 to 100 by 4 {
     .M\(-$(i)\), .M\(-$(i)\,pt\), .M\(-$(i)\,tm\), .M\(-$(i)\,t\) {
       margin: vmt(-$(i) px);
     }
@@ -3204,7 +3204,7 @@
     }
   }
 
-  @for $i from 20 to 60 by 4 {
+  @for $i from 20 to 100 by 4 {
     .M\(-$(i)\), .M\(-$(i)\,tm\), .M\(-$(i)\,m\) {
       margin: vmm(-$(i) px);
     }
