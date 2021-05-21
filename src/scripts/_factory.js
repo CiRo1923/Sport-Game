@@ -459,15 +459,3 @@ export const validate = (elem) => {
   }
   elem.parents('.jForm').find('.jFormError').empty().text(errorMsg);
 };
-
-export const validateEvent = event => {
-  const events = event.replace(/\s/g, '').split(',');
-
-  for (let i = 0; i < events.length; i += 1) {
-    prjs.$d.on(events[i], '[\\:validate]', e => {
-      const $this = j$(e.$this);
-
-      console.log($this);
-    });
-  }
-};

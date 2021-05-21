@@ -1,5 +1,5 @@
 const CONFIG = require('./config.js');
-const FS = require('fs');
+// const FS = require('fs');
 
 const vm = (value, basicWidth) => {
   let NumValue = parseInt(value, 10);
@@ -72,20 +72,20 @@ module.exports = {
       }
 
       return returnValue;
-    },
-    color(color, type) {
-      const VARIABLES = FS.readFileSync('./src/assets/css/_common/variables.css', 'utf8');
-      const colorArr = /--color:\(([^)]+)/.exec(VARIABLES.replace(/\s/g, ''))[1];
-      const colorStr = color.replace(/'|"/g, '');
-      let newColor = new RegExp(`${colorStr}:([^,?]*)`).exec(colorArr)[1];
-      const rgb = newColor.length === 4
-        ? /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(newColor)
-        : /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(newColor);
-
-      if (type === 'rgb' && rgb) {
-        newColor = `${parseInt(rgb[1], 16)}, ${parseInt(rgb[2], 16)}, ${parseInt(rgb[3], 16)}`;
-      }
-      return newColor;
     }
+    // color(color, type) {
+    //   const VARIABLES = FS.readFileSync('./src/assets/css/_common/variables.css', 'utf8');
+    //   const colorArr = /--color:\(([^)]+)/.exec(VARIABLES.replace(/\s/g, ''))[1];
+    //   const colorStr = color.replace(/'|"/g, '');
+    //   let newColor = new RegExp(`${colorStr}:([^,?]*)`).exec(colorArr)[1];
+    //   const rgb = newColor.length === 4
+    //     ? /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(newColor)
+    //     : /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(newColor);
+
+    //   if (type === 'rgb' && rgb) {
+    //     newColor = `${parseInt(rgb[1], 16)}, ${parseInt(rgb[2], 16)}, ${parseInt(rgb[3], 16)}`;
+    //   }
+    //   return newColor;
+    // }
   }
 };

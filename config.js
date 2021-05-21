@@ -17,8 +17,7 @@ module.exports = {
   plugins: () => {
     const def = [];
     let publish = def.concat(
-      ticket.HtmlWebpackPlugin,
-      live.HtmlWebpackPlugin
+      evt.HtmlWebpackPlugin
     );
 
     if (process.env.NODE_ENV === 'production') {

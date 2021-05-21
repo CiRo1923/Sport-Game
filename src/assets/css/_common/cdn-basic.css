@@ -181,6 +181,14 @@
   border-radius: 50%;
 }
 
+.Maw\(100\%\) {
+  max-width: 100%;
+}
+
+.Mah\(100\%\) {
+  max-height: 100%;
+}
+
 .W\(full\) {
   width: 100%;
 }
@@ -289,6 +297,22 @@
   .\$bf\.Bgc\($(name)\) {
     &::before {
       background-color: $(value);
+    }
+  }
+
+  .in\.Bdt\(1-$(name)\) {
+    > * {
+      &:not(:first-child) {
+        border-top: 1px solid $(value);
+      }
+    }
+  }
+
+  .in\.Bdb\(1-$(name)\) {
+    > * {
+      &:not(:last-child) {
+        border-top: 1px solid $(value);
+      }
     }
   }
 
@@ -444,6 +468,22 @@
     .\$bf\.Bgc\($(name)\:$(i)\) {
       &::before {
         background-color: rgba($(value), calc($(i) / 100));
+      }
+    }
+
+    .in\.Bdt\(1-$(name)\:$(i)\) {
+      > * {
+        &:not(:first-child) {
+          border-top: 1px solid $(value);
+        }
+      }
+    }
+
+    .in\.Bdb\(1-$(name)\:$(i)\) {
+      > * {
+        &:not(:last-child) {
+          border-top: 1px solid $(value);
+        }
       }
     }
 

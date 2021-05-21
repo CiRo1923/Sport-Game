@@ -30,7 +30,7 @@ module.exports = {
       defaultExtractor: content => content.match(/[$%\w.:\-/(,)]+(?<!\()/g) || [],
       skippedContentGlobs: ['node_modules/**'],
       safelist: {
-        deep: [/:not/, /:nth-child/, /:checked/, /:disabled/]
+        deep: [/:not/, /:nth-child/, /:first-child/, /:last-child/, /:checked/, /:disabled/, /:read-only/]
       }
     }),
     require('cssnano')({

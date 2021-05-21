@@ -37,17 +37,17 @@
   <div class="lWrap Bxz(bd)">
     <% if ( htmlWebpackPlugin.options.action !== null ) { -%>
       <div class="lHd Pos(f) W(full) Bgc(xf)">
-        <header class="mHd D(fx) Jc(c) P(12) Bxz(bd)">
+        <header class="mHd Ta(c) Px(52,t) Py(12) Px(40,m) Bxz(bd)">
           <% if ( typeof htmlWebpackPlugin.options.backURL !== 'undefined') { -%>
             <% if ( typeof htmlWebpackPlugin.options.backURL === 'string') { -%>
-              <a href="<%- htmlWebpackPlugin.options.backURL %>" class="mHdIcon D(b) Fxsh">
+              <a href="<%- htmlWebpackPlugin.options.backURL %>" class="mHdIcon D(b) Pos(a)">
                 <%- require('../_components/svg.ejs')({
                   className: 'WH(48)',
                   svgName: 'arrow-left'
                 }) %>
               </a>
             <% } else { -%>
-              <button type="button" class="mHdIcon D(b) Fxsh" onClick="window.history.back();">
+              <button type="button" class="mHdIcon D(b) Pos(a)" onClick="window.history.back();">
                 <%- require('../_components/svg.ejs')({
                   className: 'WH(48)',
                   svgName: 'arrow-left'
@@ -57,7 +57,7 @@
           <% } -%>
           <h1 class="Fz(34) Fxg Ta(c)"><b><%- htmlWebpackPlugin.options.action %></b></h1>
           <% if ( typeof htmlWebpackPlugin.options.refresh !== 'undefined' && htmlWebpackPlugin.options.refresh === true) { -%>
-            <button type="button" class="mHdIcon D(b) Fxsh jRefresh">
+            <button type="button" class="mHdIcon D(b) Pos(a) jRefresh">
               <%- require('../_components/svg.ejs')({
                 className: 'WH(48)',
                 svgName: 'refresh'
