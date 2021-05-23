@@ -5,9 +5,9 @@
   --desktop-tabbar-height: 0;
   --tablet-tabbar-height: 88px;
   --mobile-tabbar-height: 60px;
-  --desktop-imagesize: (128, 80, 48, 40, 32, 28);
-  --tablet-imagesize: (96, 60, 36, 30, 24, 20);
-  --mobile-imagesize: (64, 40, 24, 20, 16, 14);
+  --desktop-imagesize: (128, 96, 80, 48, 40, 32, 28, 24);
+  --tablet-imagesize: (96, 72, 60, 36, 30, 24, 20, 18);
+  --mobile-imagesize: (64, 48, 40, 24, 20, 16, 14, 12);
 
   /* --border-radius: (0); */
 }
@@ -22,6 +22,14 @@
           color: transparent;
         }
       }
+    }
+
+    .Grax\(0\%\:$(name1)-100\%\:$(name2)\) {
+      background-image: linear-gradient(to bottom, $(value1) 0%, $(value2) 100%);
+    }
+
+    .Gray\(0\%\:$(name1)-100\%\:$(name2)\) {
+      background-image: linear-gradient(to right, $(value1) 0%, $(value2) 100%);
     }
   }
 }

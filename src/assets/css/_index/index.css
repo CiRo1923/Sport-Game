@@ -1,0 +1,167 @@
+body {
+  &.Bgc\(xfff7\) {
+    background-color: #fff;
+  }
+}
+
+.index {
+  background: url(~index/header-bg.png) no-repeat center top;
+  background-size: 100% auto;
+}
+
+.indexTab {
+  border: 1px solid #e4e8f2;
+  background-image: linear-gradient(215deg, #fff 0%, #d5dff7 87%);
+
+  > * {
+    transition: color var(--anim-time);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    transition: opacity var(--anim-time);
+  }
+
+  &::before {
+    height: 100%;
+    background-image: linear-gradient(37deg, #40c6ff 0%, #2a67f7 100%);
+  }
+
+  &::after {
+    background-image: radial-gradient(circle at 50% -425%, #fff 0%, rgba(#000, 0) 86%);
+  }
+
+  &.act {
+    border-color: transparent;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.indexChannel {
+  &::after {
+    content: "";
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+.indexEye {
+  &:not(.act) {
+    > *:last-child {
+      display: none;
+    }
+  }
+
+  &.act {
+    > *:first-child {
+      display: none;
+    }
+  }
+}
+
+.indexEyeHide {
+  transition: max-width var(--anim-time);
+
+  &.act {
+    max-width: 0;
+  }
+}
+
+.indexCard {
+  background-image: linear-gradient(to bottom, #e6ebf7, #fff 28%, #d5dff7 100%);
+
+  &[kind] {
+    &::before {
+      content: attr(kind);
+      font-family: coluna;
+      line-height: 1;
+      font-stretch: condensed;
+      position: absolute;
+    }
+  }
+}
+
+@mixin T {
+  .indexChannel {
+    &::after {
+      width: vmt(24px);
+    }
+  }
+
+  .indexBanner {
+    width: vmt(736px);
+    height: vmt(height("index/banner.jpg") / width("index/banner.jpg") * 736);
+  }
+
+  .indexEyeHide {
+    max-width: vmt(225px);
+  }
+
+  .indexTab {
+    &::after {
+      height: vmt(9px);
+    }
+  }
+
+  .indexCard {
+    height: vmt(180px);
+
+    &[kind] {
+      &::before {
+        bottom: vmm(-36px);
+        left: vmt(9px);
+        font-size: vmt(105px);
+      }
+    }
+  }
+}
+
+@mixin M {
+  .indexChannel {
+    &::after {
+      width: vmm(24px);
+    }
+  }
+
+  .indexBanner {
+    width: vmm(390px);
+    height: vmm(height("index/banner.jpg") / width("index/banner.jpg") * 390);
+  }
+
+  .indexEyeHide {
+    max-width: vmm(150px);
+  }
+
+  .indexTab {
+    &::after {
+      height: vmm(6px);
+    }
+  }
+
+  .indexCard {
+    height: vmm(120px);
+
+    &[kind] {
+      &::before {
+        bottom: vmm(-24px);
+        left: vmm(6px);
+        font-size: vmm(72px);
+      }
+    }
+  }
+}

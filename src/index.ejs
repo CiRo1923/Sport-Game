@@ -1,0 +1,136 @@
+<%
+    htmlWebpackPlugin.options.backURL = false;
+    htmlWebpackPlugin.options.refresh = false;
+    htmlWebpackPlugin.options.tools = true;
+-%>
+<div class="index Px(16,t) Pt(16,t) Px(12,m) Pt(12,m)">
+  <div class="D(fx) Ai(c) Jc(betw)">
+    <ul class="D(fx) Ai(c) Mx(-16,t) Mx(-12,m)">
+      <li class="Px(16,t) Px(12,m)">
+        <a href="index.html" class="indexChannel Pb(6,t) Pb(4,m) Fz(34) C(xf:60) act act:C(xf) Pos(r) D(b) $af.act:Bgc(xf)">
+          <b>首页</b>
+        </a>
+      </li>
+      <li class="Px(16,t) Px(12,m)">
+        <a href="javascript:;" class="indexChannel Pb(6,t) Pb(4,m) Fz(34) C(xf:60) act:C(xf) Pos(r) D(b) $af.act:Bgc(xf)">
+          <b>视频直播</b>
+        </a>
+      </li>
+    </ul>
+    <div class="D(fx) Ai(c)">
+      <div class="Bdrs(10) Bgc(xf:20) Mr(6,t) Mr(4,m) Py(3,t) Pl(3,t) Pr(9,t) Py(2,m) Pl(2,m) Pr(6,m) D(fx) Ai(c) Fxg">
+        <button type="button" class="indexEye WH(40) Bdrs(50%) Ov(hide) Bxz(bd) Mr(9,t) Mr(6,m) P(6,t) P(4,m) Bgc(xf) jEye">
+          <%- require('_components/svg.ejs')({
+            className: 'WH(24) Fi(x26eb)',
+            svgName: 'eye-open'
+          }) %>
+          <%- require('_components/svg.ejs')({
+            className: 'WH(24) Fi(x26eb)',
+            svgName: 'eye-close'
+          }) %>
+        </button>
+        <em class="C(xf:80) D(b) Mr(3,t) Mr(2,m)">TMP</em>
+        <span class="indexEyeHide D(b) Ov(hide) C(xf) jEyeHide">13,000,000</span>
+      </div>
+      <button type="button" class="D(b) Fxsh">
+        <%- require('_components/svg.ejs')({
+          className: 'WH(40) Fi(xf)',
+          svgName: 'refresh'
+        }) %>
+      </button>
+    </div>
+  </div>
+  <div class="Mt(12,t) Mt(8,m)">
+    <div class="Is(n) Whs(now) Ov(hide) jTns" :set="{'navPosition': 'bottom', 'controls': false}">
+      <% for(let i = 0; i < 2; i += 1) { -%>
+        <div class="D(ib) Bdrs(8) Ov(hide) jTnsItem">
+          <a href="javascript:;" class="D(b)">
+            <%- require('_components/img.ejs')({
+              className: {
+                figure: 'indexBanner'
+              },
+              path: require('/assets/img/index/banner.jpg'),
+              alt: ''
+            }) %>
+          </a>
+        </div>
+      <% } -%>
+    </div>
+  </div>
+  <div class="D(fx) Fxd(row-r) Ai(c) P(12,t) P(8,m) Bgc(xfff7) Bdrs(5) Mt(16,t) Mt(12,m)">
+    <p class="Tov(...) Fxg Ml(9,t) Ml(6,m) C(x9abf)">足球赛事：2021/01/28 01:45 土耳其超级杯（伊斯坦布尔伊斯坦布尔伊斯坦布尔伊斯坦布尔伊斯坦布尔)</p>
+    <%- require('_components/svg.ejs')({
+      className: 'WH(40) Fi(x26eb) Fxsh',
+      svgName: 'notice'
+    }) %>
+  </div>
+  <div class="D(fx) Fxd(row-r) Mt(16,t) Mt(12,m)">
+    <ul class="Fxg in.Mt(16,t) in.Mt(12,m)">
+      <%
+        const bet = [{
+          type: '足球',
+          number: 22,
+          kind: 'Football',
+          img: require('/assets/img/common/lazyload.png')
+        }, {
+          type: '籃球',
+          number: 19,
+          kind: 'Basketball',
+          img: require('/assets/img/common/lazyload.png')
+        }, {
+          type: '網球',
+          number: 06,
+          kind: 'Tennis',
+          img: require('/assets/img/common/lazyload.png')
+        }]
+      -%>
+      <% for(let i = 0; i < bet.length; i += 1 ) { -%>
+        <% const {type, number, kind, img} = bet[i]; -%>
+        <li>
+          <div class="Bdrs(5) Bdw(1) Bdc(xeef2) Bdst(sol) P(1) Ov(hide) Pos(r)">
+            <div class="indexCard $bf.C(x78a6:10) D(fx) Ai(c)" kind="<%- kind %>">
+              <div class="in.Mt(6,t) in.Mt(4,m) Col(5/11) Ta(c)">
+                <b class="D(b) Fz(72)"><%- number %></b>
+                <b class="D(b) Fz(30)"><%- type %></b>
+                <b class="D(b) Fz(28) C(x7799) Fst(i)"><%- kind %></b>
+              </div>
+              <%- require('_components/img.ejs')({
+                className: {
+                  figure: 'indexCardFig Col(6/11) H(full)'
+                },
+                path: img,
+                alt: type
+              }) %>
+            </div>
+          </div>
+        </li>
+      <% } -%>
+    </ul>
+    <ul class="Fxsh in.Mt(14,t) in.Mt(10,m) Mr(14,t) Mr(10,m)">
+      <%
+        const tab = [{
+          type: '今日',
+          number: 49
+        }, {
+          type: '滾球',
+          number: 24
+        }, {
+          type: '早盤',
+          number: 632
+        }, {
+          type: '冠軍',
+          number: 18
+        }]
+      -%>
+      <% for(let i = 0; i < tab.length; i += 1) { -%>
+        <% const {type, number} = tab[i]; -%>
+        <li>
+          <button type="button" class="indexTab W(96) Bdrs(5) Bxz(bd) Py(14,t) Py(10,m) Pos(r) Ov(hide) Ta(c)<%- i === 0 ? ' act' : '' %> jTab">
+            <em class="D(b) C(x9abf) act:C(xf)"><%- type %></em>
+            <b class="Fz(36) D(b) act:C(xf)"><%- number %></b>
+          </button>
+        </li>
+      <% } -%>
+    </ul>
+  </div>
+</div>

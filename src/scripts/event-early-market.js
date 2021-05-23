@@ -1,16 +1,20 @@
 import '../assets/css/event-early-market.css';
-import { tinySlider } from '_event/tiny-slider.js';
-import { acc, accAllClose, ticketCtrl } from '_common.js';
+import { tns } from 'tiny-slider/src/tiny-slider.js';
+import {
+  acc, accAllClose, ticketCtrl, tinySlider
+} from '_common.js';
 import { prjs } from '_factory.js';
 
 ticketCtrl();
 
 prjs.$w.on('load', () => {
-  tinySlider();
+  tinySlider(tns);
+
   acc({
     ctrl: '.jAccCardCtrl',
     bd: '.jAccCardBd'
   });
+
   accAllClose({
     ctrl: '.jAccCardLiveClose',
     frame: '.jAccCard',

@@ -1,12 +1,12 @@
 <div class="tab Bgc(x26eb) D(fx)">
   <div class="tabBd Fxg">
-    <div class="Is(n) Whs(now) Ov(hide) jTnsTab">
+    <div class="Is(n) Whs(now) Ov(hide) jTns" :set="{'items': 4, 'loop': false, 'nav': false, 'controls': false}">
       <% for( let i = 0; i < tabs.length; i += 1 ) { -%>
         <%
           const { name, href, notice } = tabs[i];
         -%>
         <div class="Ta(c) Pos(r) D(ib) Col(3/12)">
-          <a href="<%- href %>" class="tabCtrl Py(8) D(b) C(xf:50) act:C(xf) $bf.C(x26eb) $bf.Bgc(xf:50) $bf.act:Bgc(xf) $af.Bgc(xf)<%- act === i ? ' act' : '' %> jTnsTabItem" notice="<%- notice %>">
+          <a href="<%- href %>" class="tabCtrl Py(8) D(b) C(xf:50) act:C(xf) $bf.C(x26eb) $bf.Bgc(xf:50) $bf.act:Bgc(xf) $af.Bgc(xf)<%- act === i ? ' act' : '' %> jTnsItem" notice="<%- notice %>">
             <em class="Fz(30)"><%- name %></em>
           </a>
         </div>

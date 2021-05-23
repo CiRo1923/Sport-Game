@@ -166,6 +166,29 @@ export const ticketCtrl = () => {
   });
 };
 
+export const tinySlider = (tns) => {
+  const tneElem = j$('.jTns')[0];
+
+  if (tneElem.length !== 0) {
+    const tenItem = j$('.jTnsItem');
+    const tneSet = j$('.jTns').attr(':set') ? JSON.parse(j$('.jTns').attr(':set').replace(/'/g, '"')) : {};
+    let startIndex = 0;
+
+    for (let i = 0; i < tenItem[0].length; i += 1) {
+      const tenItemElem = tenItem.eq(i);
+
+      if (tenItemElem.hasClass('act')) {
+        startIndex = tenItemElem.parent().index();
+      }
+    }
+
+    tns(Object.assign({
+      container: '.jTns',
+      startIndex: startIndex
+    }, tneSet));
+  }
+};
+
 prjs.$d.on('click', '.jRefresh', () => {
   refresh();
 });

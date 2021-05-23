@@ -1,6 +1,5 @@
 @import '_common/cdn-mixin';
 @import '_common/variables';
-@import '_common/font';
 @import '_common/reset';
 @import '_common/framework';
 @import '_common/layout';

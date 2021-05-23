@@ -1,0 +1,12 @@
+/* common */
+@import "_library";
+@import '_common/font';
+
+/* purgecss start ignore */
+@import '../../../node_modules/tiny-slider/dist/tiny-slider';
+@import "_tiny-slider";
+
+/* purgecss end ignore */
+
+/* page */
+@import '_index/index';

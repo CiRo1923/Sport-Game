@@ -1,0 +1,49 @@
+.tns-outer {
+  position: relative;
+}
+
+.tns-nav {
+  left: 0;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+
+  > * {
+    margin-right: 1px;
+    margin-left: 1px;
+    height: 2px;
+    display: inline-block;
+    transform-origin: center center;
+    background-color: rgba(#fff, 0.3);
+    transition: transform var(--anim-time);
+
+    &.tns-nav-active {
+      background-color: rgba(#fff, 0.8);
+    }
+
+    &:not(.tns-nav-active) {
+      transform: scaleX(0.5);
+    }
+  }
+}
+
+@mixin M {
+  .tns-nav {
+    bottom: vmm(14px);
+
+    > * {
+      width: vmm(16px);
+    }
+  }
+}
+
+@mixin M {
+  .tns-nav {
+    bottom: vmm(10px);
+
+    > * {
+      width: vmm(12px);
+    }
+  }
+}

@@ -35,7 +35,7 @@
 </head>
 <body class="Bgc(xfff7) C(x2342) Fz(26) Minh(scr)">
   <div class="lWrap Bxz(bd)">
-    <% if ( htmlWebpackPlugin.options.action !== null ) { -%>
+    <% if ( htmlWebpackPlugin.options.action !== null && htmlWebpackPlugin.options.action !== '首页' ) { -%>
       <div class="lHd Pos(f) W(full) Bgc(xf)">
         <header class="mHd Ta(c) Px(52,t) Py(12) Px(40,m) Bxz(bd)">
           <% if ( typeof htmlWebpackPlugin.options.backURL !== 'undefined') { -%>
@@ -77,7 +77,7 @@
             icon      : '--home',
             name      : '首页',
             className : null,
-            href      : 'javascript:;',
+            href      : 'index.html',
             notice    : null
           }, {
             icon      : '--bets',
@@ -95,7 +95,7 @@
             icon      : '--personal',
             name      : '我的',
             className : null,
-            href      : 'javascript:;',
+            href      : null,
             notice    : null
           }]
         -%>
@@ -105,10 +105,17 @@
               const { icon, name, className, href, notice } = tabBar[i];
             -%>
             <li class="Ta(c) Fx(0)">
-              <a href="<%- href %>" class="mTabBarBtn<%- htmlWebpackPlugin.options.action === name ? ' act' : '' %> D(b) C(xbbd1) $bf.C(xf) $bf.Bgc(xf457)<%- className ? ` ${className}` : '' %>"<%- notice !== null ? ` notice="${notice}"` : '' %>>
-                <i class="mIcon <%- icon %> Fz(48) act:C(0%:x3bfc-100%:x26f7) Mb(3) D(ib)"></i>
-                <b class="D(b) Fz(24) act:C(x26eb)"><%- name %></b>
-              </a>
+              <% if ( href ) { -%>
+                <a href="<%- href %>" class="mTabBarBtn<%- htmlWebpackPlugin.options.action === name ? ' act' : '' %> D(b) C(xbbd1) $bf.C(xf) $bf.Bgc(xf457)<%- className ? ` ${className}` : '' %>"<%- notice !== null ? ` notice="${notice}"` : '' %>>
+                  <i class="mIcon <%- icon %> Fz(48) act:C(0%:x3bfc-100%:x26f7) Mb(3) D(ib)"></i>
+                  <b class="D(b) Fz(24) act:C(x26eb)"><%- name %></b>
+                </a>
+              <% } else { -%>
+                <span class="mTabBarBtn D(b) C(xbbd1) $bf.C(xf) $bf.Bgc(xf457)">
+                  <i class="mIcon <%- icon %> Fz(48) Mb(3) D(ib)"></i>
+                  <b class="D(b) Fz(24)"><%- name %></b>
+                </span>
+              <% } -%>
             </li>
           <% } -%>
         </ul>
