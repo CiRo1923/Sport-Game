@@ -155,7 +155,7 @@
   &::after {
     content: "";
     bottom: 0;
-    background: url(~common/ticket-cut.png) no-repeat center center;
+    background: url(~common/ticket_cut.png) no-repeat center center;
     background-size: 100% auto;
     pointer-events: none;
     position: absolute;
@@ -278,25 +278,25 @@
   .mTicketPopHd {
     &::before,
     &::after {
-      width: vmt((width("common/ticket-cut.png") * 0.75));
-      height: vmt((height("common/ticket-cut.png") * 0.75));
+      width: vmt((width("common/ticket_cut.png") * 0.75));
+      height: vmt((height("common/ticket_cut.png") * 0.75));
     }
 
     & + .mTicketPopBd {
-      margin-top: vmt(height("common/ticket-cut.png") * 0.75 - 1);
+      margin-top: vmt(height("common/ticket_cut.png") * 0.75 - 1);
       padding-top: vmt(2px);
 
       &::before,
       &::after {
-        width: calc(100% - vmt(width("common/ticket-cut.png") * 1.5 - 2));
+        width: calc(100% - vmt(width("common/ticket_cut.png") * 1.5 - 2));
       }
 
       &::before {
-        height: vmt(height("common/ticket-cut.png") * 0.75 + 2);
+        height: vmt(height("common/ticket_cut.png") * 0.75 + 2);
       }
 
       &::after {
-        margin-top: vmt(height("common/ticket-cut.png") * 0.75 / -2 + 1);
+        margin-top: vmt(height("common/ticket_cut.png") * 0.75 / -2 + 1);
       }
     }
   }
@@ -372,25 +372,25 @@
   .mTicketPopHd {
     &::before,
     &::after {
-      width: vmm((width("common/ticket-cut.png") / 2));
-      height: vmm((height("common/ticket-cut.png") / 2));
+      width: vmm((width("common/ticket_cut.png") / 2));
+      height: vmm((height("common/ticket_cut.png") / 2));
     }
 
     & + .mTicketPopBd {
-      margin-top: vmm(height("common/ticket-cut.png") / 2 - 1);
+      margin-top: vmm(height("common/ticket_cut.png") / 2 - 1);
       padding-top: vmm(2px);
 
       &::before,
       &::after {
-        width: calc(100% - vmm(width("common/ticket-cut.png") - 2));
+        width: calc(100% - vmm(width("common/ticket_cut.png") - 2));
       }
 
       &::before {
-        height: vmm(height("common/ticket-cut.png") / 2 + 2);
+        height: vmm(height("common/ticket_cut.png") / 2 + 2);
       }
 
       &::after {
-        margin-top: vmm(height("common/ticket-cut.png") / -4 + 1);
+        margin-top: vmm(height("common/ticket_cut.png") / -4 + 1);
       }
     }
   }

@@ -5,7 +5,7 @@ body {
 }
 
 .index {
-  background: url(~index/header-bg.png) no-repeat center top;
+  background: url(~index/header_bg.png) no-repeat center top;
   background-size: 100% auto;
 }
 
@@ -83,6 +83,29 @@ body {
 }
 
 .indexCard {
+  &::before,
+  &::after {
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    background-image: url(~index/triangle_top.png);
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+    background-image: url(~index/triangle_bottom.png);
+  }
+}
+
+.indexCardCnt {
   background-image: linear-gradient(to bottom, #e6ebf7, #fff 28%, #d5dff7 100%);
 
   &[kind] {
@@ -119,11 +142,23 @@ body {
   }
 
   .indexCard {
-    height: vmt(180px);
+    &::before {
+      width: vmt(width("index/triangle_top.png") * 0.75);
+      height: vmt(height("index/triangle_top.png") * 0.75);
+    }
+
+    &::after {
+      width: vmt(width("index/triangle_bottom.png") * 0.75);
+      height: vmt(height("index/triangle_bottom.png") * 0.75);
+    }
+  }
+
+  .indexCardCnt {
+    height: vmt(236px);
 
     &[kind] {
       &::before {
-        bottom: vmm(-36px);
+        bottom: vmt(-36px);
         left: vmt(9px);
         font-size: vmt(105px);
       }
@@ -154,6 +189,18 @@ body {
   }
 
   .indexCard {
+    &::before {
+      width: vmm(width("index/triangle_top.png") / 2);
+      height: vmm(height("index/triangle_top.png") / 2);
+    }
+
+    &::after {
+      width: vmm(width("index/triangle_bottom.png") / 2);
+      height: vmm(height("index/triangle_bottom.png") / 2);
+    }
+  }
+
+  .indexCardCnt {
     height: vmm(120px);
 
     &[kind] {

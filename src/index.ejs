@@ -71,24 +71,33 @@
           type: '足球',
           number: 22,
           kind: 'Football',
-          img: require('/assets/img/common/lazyload.png')
+          img: require('/assets/img/index/soccer_player.png'),
+          href: 'event-today.html'
         }, {
           type: '籃球',
           number: 19,
           kind: 'Basketball',
-          img: require('/assets/img/common/lazyload.png')
+          img: require('/assets/img/index/basketball_player.png'),
+          href: 'event-live.html'
         }, {
           type: '網球',
           number: 06,
           kind: 'Tennis',
-          img: require('/assets/img/common/lazyload.png')
+          img: require('/assets/img/index/tennis_player.png'),
+          href: 'event-early-market.html'
+        }, {
+          type: '棒球',
+          number: 06,
+          kind: 'Baseball',
+          img: require('/assets/img/index/baseball_player.png'),
+          href: 'event-champion.html'
         }]
       -%>
       <% for(let i = 0; i < bet.length; i += 1 ) { -%>
-        <% const {type, number, kind, img} = bet[i]; -%>
+        <% const {type, number, kind, img, href} = bet[i]; -%>
         <li>
-          <div class="Bdrs(5) Bdw(1) Bdc(xeef2) Bdst(sol) P(1) Ov(hide) Pos(r)">
-            <div class="indexCard $bf.C(x78a6:10) D(fx) Ai(c)" kind="<%- kind %>">
+          <a href="<%- href %>" class="indexCard Bdrs(5) Bdw(1) Bdc(xeef2) Bdst(sol) P(1) Ov(hide) Pos(r) D(b)">
+            <div class="indexCardCnt $bf.C(x78a6:10) D(fx) Ai(c)" kind="<%- kind %>">
               <div class="in.Mt(6,t) in.Mt(4,m) Col(5/11) Ta(c)">
                 <b class="D(b) Fz(72)"><%- number %></b>
                 <b class="D(b) Fz(30)"><%- type %></b>
@@ -102,7 +111,7 @@
                 alt: type
               }) %>
             </div>
-          </div>
+          </a>
         </li>
       <% } -%>
     </ul>
