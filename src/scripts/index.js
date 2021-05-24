@@ -1,7 +1,9 @@
 import '../assets/css/index.css';
 import { tns } from 'tiny-slider/src/tiny-slider.js';
-import { acc, tinySlider } from '_common.js';
+import { acc, tinySlider, ticketCtrl } from '_common.js';
 import { prjs, j$ } from '_factory.js';
+
+ticketCtrl();
 
 prjs.$d.on('click', '.jEye', e => {
   const $this = j$(e.$this);
