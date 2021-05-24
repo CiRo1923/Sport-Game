@@ -162,8 +162,11 @@ export const ticketCtrl = () => {
 
   prjs.$d.on('click', '.jPopClose', () => {
     const $pop = j$('.jPop');
+    const $ticket = j$('.jTicket');
     $pop.removeClass('act');
-    prjs.$hb.removeClass('Ov(hide)');
+    if (!$ticket.hasClass('act')) {
+      prjs.$hb.removeClass('Ov(hide)');
+    }
   });
 };
 
