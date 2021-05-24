@@ -163,6 +163,7 @@ export const ticketCtrl = () => {
   prjs.$d.on('click', '.jPopClose', () => {
     const $pop = j$('.jPop');
     $pop.removeClass('act');
+    prjs.$hb.removeClass('Ov(hide)');
   });
 };
 
