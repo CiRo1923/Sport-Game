@@ -94,23 +94,23 @@ export const ticketCtrl = () => {
   });
 
   // 串关投注 checkbox 改變事件
-  prjs.$d.on('change', '.jFormCheckBoxMore', e => {
-    const $this = j$(e.$this);
-    const $ticketMore = j$('.jTicketMore');
-    const $ticketMoreEm = j$('.jTicketMoreEm');
-    const ticketMoreSet = JSON.parse($ticketMoreEm.attr(':text').replace(/'/g, '"'));
-    const $moreList = j$('.jTicketMoreList');
+  // prjs.$d.on('change', '.jFormCheckBoxMore', e => {
+  //   const $this = j$(e.$this);
+  //   const $ticketMore = j$('.jTicketMore');
+  //   const $ticketMoreEm = j$('.jTicketMoreEm');
+  //   const ticketMoreSet = JSON.parse($ticketMoreEm.attr(':text').replace(/'/g, '"'));
+  //   const $moreList = j$('.jTicketMoreList');
 
-    if ($this.prop('checked')) {
-      $ticketMore.prop('disabled', false);
-    } else {
-      $ticketMore.prop('disabled', true);
-      $ticketMore.removeClass('act');
-      $moreList.removeClass('act');
-      $moreList[0][0].style.maxHeight = 0;
-      $ticketMoreEm.text(ticketMoreSet.close);
-    }
-  });
+  //   if ($this.prop('checked')) {
+  //     $ticketMore.prop('disabled', false);
+  //   } else {
+  //     $ticketMore.prop('disabled', true);
+  //     $ticketMore.removeClass('act');
+  //     $moreList.removeClass('act');
+  //     $moreList[0][0].style.maxHeight = 0;
+  //     $ticketMoreEm.text(ticketMoreSet.close);
+  //   }
+  // });
 
   // 更多串关类型
   prjs.$d.on('click', '.jTicketMore', e => {
