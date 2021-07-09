@@ -3,10 +3,7 @@ import {
   prjs, j$, svgRequire, validate
 } from '_factory.js';
 
-new LazyLoad({
-  elements_selector: '.lazy',
-  use_native: true
-});
+let lazyLoadFun = new LazyLoad();
 
 /* 一次載入使用到的 svg */
 svgRequire(require.context('../assets/svg/', true, /\.svg$/));
@@ -171,28 +168,38 @@ export const ticketCtrl = () => {
 };
 
 export const tinySlider = (tns) => {
-  const tneElem = j$('.jTns')[0];
+  const tneElem = j$('.jTns');
 
-  if (tneElem.length !== 0) {
-    const tenItem = j$('.jTnsItem');
-    const tneSet = j$('.jTns').attr(':set') ? JSON.parse(j$('.jTns').attr(':set').replace(/'/g, '"')) : {};
-    let startIndex = 0;
+  if (tneElem[0].length !== 0) {
+    tneElem[0].forEach(elem => {
+      const tneElemEq = j$(elem);
+      const tenItem = tneElemEq.find('.jTnsItem');
+      const tneSet = tneElemEq.attr(':set') ? JSON.parse(tneElemEq.attr(':set').replace(/'/g, '"')) : {};
+      let startIndex = 0;
 
-    for (let i = 0; i < tenItem[0].length; i += 1) {
-      const tenItemElem = tenItem.eq(i);
+      for (let j = 0; j < tenItem[0].length; j += 1) {
+        const tenItemElem = tenItem.eq(j);
 
-      if (tenItemElem.hasClass('act')) {
-        startIndex = tenItemElem.parent().index();
+        if (tenItemElem.hasClass('act')) {
+          startIndex = tenItemElem.parent().index();
+        }
       }
-    }
 
-    tns(Object.assign({
-      container: '.jTns',
-      startIndex: startIndex
-    }, tneSet));
+      tns(Object.assign({
+        container: elem,
+        startIndex: startIndex
+      }, tneSet));
+    });
   }
 };
 
 prjs.$d.on('click', '.jRefresh', () => {
   refresh();
+});
+
+prjs.$d.on('ready', () => {
+  lazyLoadFun({
+    elements_selector: '.lazy',
+    use_native: true
+  });
 });
